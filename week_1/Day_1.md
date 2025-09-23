@@ -1,189 +1,265 @@
+# Welcome, 
 
-# Introduction to verilog RTL Design and Synthesis
+The repository is included in the Verilog RTL Design and Synthesis Workshop with open-source tools, such as, Icarus Verilog (Iverilog), GTKWave, and Yosys. It will take you through the entire process of digital design - starting with writing Verilog RTL and simulating, visualizing waveform, and ultimately converting it into a netlist at the gate level.
 
-# Introduction to Open Source simulator Iverilog
+---
 
-## Simulator
+# 1. Introduction to Verilog RTL Design and Synthesis
 
-Simulator is a tool used for simulating the design for checking the design.
+This repository introduces the fundamentals of **Verilog RTL design**, **simulation using Icarus Verilog (Iverilog)**, **waveform analysis using GTKWave**, and **logic synthesis using Yosys**. You'll learn the flow from writing Verilog RTL to synthesizing it into a gate-level netlist using open-source tools.
 
-## Simulator Used  
-## Iverilog
+---
 
-Iverilog is a simulator which is going to use in this course.
+# 2. Introduction to Open Source Simulator – Icarus Verilog (Iverilog)
 
-## Design
-Design is a verilog code which has the actual functionality of the required specifications.
+## 2.1 What is a Simulator?
 
-Design has multiple primary Inputs and Primary Outputs.
+A **simulator** is a tool used to simulate digital designs to check the designs.
 
-Primary Inputs are used to generate stimulus or test vectors.
+## 2.2 Simulator Used: Iverilog
 
-Primary Outputs are used to observe the stimulus.
+We will use **Icarus Verilog (Iverilog)** in this course. It is an open-source Verilog simulation and synthesis tool.
 
-## Testbench
-Testbench is used to apply stimulus or test vectors to check the functionalities of the design.
+---
 
-Testbench does not have any primary inputs and primary outputs.
+# 3. Understanding Design and Testbench
 
-## Working of Simulator
-- Mainly,Simulator looks for the change in the input signal.
+## 3.1 Design
 
-- If any input changes,then simulator evaluates the output.
+* A **design** is a Verilog module that describes the required functionality.
+* It typically contains:
 
-- If no change in the inputs,then does not evaluate the outptut.
+  - **Primary Inputs**: Used to apply test vectors (stimulus).
+  - **Primary Outputs**: Used to observe the behavior.
 
-## Iverilog based simulation flow
-image...
+## 3.2 Testbench
 
-Any simulator can be used not only Iverilog,different simulator can be used which can changes the inputs are dumped in the changes int he outptut according to the changes in the inputs.
+* A **testbench** is used to apply stimulus to the design and verify its behavior.
+* It does **not** have any primary inputs or outputs.
+* It instantiates the design and provides input values over time.
 
-Design and Testbench code are compiled in the iverilog and the VCD(Value Change Dump Format) file is created.The VCD file is visualized graphically with the help of GTKWave.
+---
 
-## Lab 1 - Using Iverilog and GTKWave
+# 4. How Simulators Work
 
-## Intro to Lab
+* Simulators monitor changes in input signals.
+* If inputs change, the simulator **evaluates** and updates the outputs.
+* If no change in inputs, it **skips evaluation** to save time.
 
-To start the login shell use,
+---
 
-`
-Sudo -i
-`
+# 5. Iverilog-Based Simulation Flow
 
-Clone Git file for design and testbench code,
+Even though we use **Iverilog**, the same flow is applicable for other simulators.
 
-```git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git```
+### Simulation Flow:
 
-After Clone, Change directory
+1. Compile **Design** and **Testbench** using Iverilog.
+2. A **VCD(Vlaue Change Dump Format) File** is created.
+3. View the waveform using **GTKWave**.
 
-```cd sky130RTLDesignAndSynthesisWorkshop```
+---
 
-List the files inside the directory
+# 6. Lab 1 – Using Iverilog and GTKWave
 
-``` ls ```
+## 6.1 Setting Up the Environment
 
-Change directory to my_lib
+```bash
+sudo -i
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+cd sky130RTLDesignAndSynthesisWorkshop
+ls
+cd my_lib
+ls
+cd verilog_model
+cd verilog_files/
+```
 
-``` cd my_lib```
+This Verilog files contain the **design and testbench** code.
 
-``` ls ```
+---
 
-change to Verilog model,
+## 6.2 Running Iverilog Simulation and GTKwave(Part 1)
 
-``` cd verilog model```
+Use the following command to compile the design and testbench:
 
-change directory to Verilog files,
+```bash
+iverilog good_mux.v tb_good_mux.v
+```
 
-``` cd verilog_files/```
+* `good_mux.v`: Design file.
+* `tb_good_mux.v`: Testbench file.
 
+This generates an executable called `a.out`.
 
-These verilog files contains all the design and testbench file.
+Now run the simulation:
 
-## Intro to Iverilog and GTKWave Part-1
+```bash
+./a.out
+```
 
-Use both Design and Testbench file from verilog files to run in iverilog
+This produces the **`tb_good_mux.vcd`** file containing waveform data.
 
-use command,
+---
 
-``` iverilog good_mux.v tb_good_mux.v```
+# 7. GTKWave – Viewing Simulation Waveforms
 
-- where good_mux.v is a design file.
+To open the VCD file in GTKWave:
 
-- tb_good_mux.v is a testbench file.
+```bash
+gtkwave tb_good_mux.vcd
+```
 
-Then ./a.out file is created
+You can now graphically view all input/output transitions.
 
-./a.out is used to dump outputs to the testbench.
+---
 
-tb_good.vcd is a VCD file which has all the dumped outputs.
+# 8. Structure of Design and Testbench Files
 
-# GTKWave
+Use the following command to open both files in split view:
 
- Use GTKWAve to visiuasize the VCD file in Graphical manner.
+```bash
+gvim tb_good_mux.v -o good_mux.v
+```
 
-Use Command,
+This helps you understand how testbenches apply stimuli to the design.
 
-``` gtkwave tb_mux.vcd```
+---
 
-We can visualize the vcd file graphically.
+#  9. Introduction to Yosys and Logic Synthesis
 
-## Structure of files
+## 9.1 What is a Synthesizer?
 
-Find the structure of Design and Testbench file Using
+A **synthesizer** converts **RTL code** (usually written in Verilog) into a **gate-level netlist** using a technology library (`.lib` file).
 
-``` gvim tb_good_mux.v -o good_mux.v```
+* We use **Yosys**, an open-source synthesis tool.
+* It maps the RTL design to standard cells (like AND, OR, NAND, etc.) defined in `.lib`.
 
-image....
+---
 
-##  Intro to Yosys and Logic Synthesis
+## 9.2 Yosys Synthesis Flow
 
-# Synthesizer
+1. **Read Verilog file**:
 
-Synthesizer is tool for convertinf RTL to netlist.
+   ```bash
+   read_verilog good_mux.v
+   ```
 
-Yosys is one of the synthesizer.
+2. **Read Liberty file (.lib)**:
 
-Here the Design file and .lib file(which contains standard cells like AND,OR,NAND....)
+   ```bash
+   read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
 
-- Both Design and .lib files are given to yosys then it will generate a netlist file.
+3. **Synthesize**:
 
-image....
+   ```bash
+   synth -top good_mux
+   ```
 
-use command for Design,
+4. **Technology Mapping**:
 
-``` read_verilog```
+   ```bash
+   abc -liberty /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
 
-use command for .lib,
+5. **Write Netlist**:
 
-``` read_liberty```
+   ```bash
+   write_verilog good_mux_netlist.v
+   ```
 
-netlist file,
+6. **Visualize** the synthesized netlist:
 
-```write_verilog```
+   ```bash
+   show
+   ```
 
-Netlist is a representation of design in the form of cells in .lib file.
+---
 
-# Verify the Synthesis
+# 🔍 10. Verifying the Synthesis Output
 
-To verify the synthesis use following steps,
+* Use the same **testbench** with the synthesized **netlist**.
+* Simulate using Iverilog again to generate a VCD file.
+* Open the VCD in GTKWave to verify that **outputs match RTL simulation**.
 
-- Netlist file and Testbench file are given to iverilog 
+✅ If the outputs match, the synthesis is functionally correct.
 
-- Iverilog creates a VCD file.
+---
 
-- VCD file can be represented in waves using GTKWave.
+# 11. Logic Synthesis and Gate-Level Modeling
 
-- The output need to be same as we observed in the RTL Simulation.
+* RTL design is usually described using **behavioral modeling**.
+* However, digital hardware is built using **gates**.
+* The synthesizer converts RTL into a **gate-level representation**, called a **netlist**.
 
-- A Set of Primary inputs and primary outputs will remain same between RTL Design and synthesized netlist.So the same Testbench can be used like in RTL.
+This process ensures your design can be **fabricated** using real-world transistors and logic cells.
 
-## Logic Synthesis
+---
 
-- Usually,RTL Design is represented in Behavioural modelling.
+# 12. Faster Cell vs Slower Cell
 
-image....
+| Feature           | Fast Cell                  | Slow Cell                    |
+| ----------------- | -------------------------- | ---------------------------- |
+| Delay             | Shorter (Faster Switching) | Longer (Slower Switching)    |
+| Power Consumption | Higher                     | Lower                        |
+| Area              | Larger (Wide Transistors)  | Smaller (Narrow Transistors) |
+| Use Case          | Timing-critical paths      | Power-efficient paths        |
 
-- But Computer Hardware can understand Digital logic circuits only.
+* **Fast Cells**:
 
-# How this RTL code and Dgital Logic circuits are matched by synthesis?
+  * Use **wide transistors** to reduce propagation delay.
+  * Trade-off: Higher **area** and **power**.
+  * Can cause **Hold Time Violations**.
 
-- RTL is converted to Gate Level Modelling.
-- Design is converted to gates and the connections are made between the gates.
-- This is given out as a file called netlist.
+* **Slow Cells**:
 
-Why Different Flavours of Gate?
+  * Use **narrow transistors**.
+  * Good for reducing **leakage** and saving area.
 
+---
 
+#  13. Selection of Cells in Synthesis
 
+Choosing the right cells is critical:
 
+* Using **too many fast cells**:
 
+  * Increases area and power.
+  * May cause hold time issues.
 
+* Using **too many slow cells**:
 
+  * Saves power but hurts performance.
 
+✅ Solution: Use **constraints** to guide the synthesizer to balance speed, area, and power.
 
+---
 
+# 14. Yosys – Synthesis Example (good\_mux.v)
 
+### Yosys Commands Recap:
 
+```bash
+yosys
+read_liberty -lib /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog good_mux.v
+synth -top good_mux
+abc -liberty /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
 
+This will generate a **netlist** that maps your design to real standard cells.
 
+---
 
+# 15. Summary
+
+* Simulate your design using **Iverilog**.
+* View waveforms using **GTKWave**.
+* Synthesize design using **Yosys**.
+* Understand the trade-offs between **fast** and **slow** cells.
+* Learn to guide synthesis using **constraints**.
+* Verify synthesis using testbenches and waveform comparison.
+
+---
