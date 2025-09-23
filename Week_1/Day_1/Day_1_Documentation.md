@@ -20,8 +20,6 @@ A **simulator** is a tool used to simulate digital designs to check the designs.
 
 We will use **Icarus Verilog (Iverilog)** in this course. It is an open-source Verilog simulation and synthesis tool.
 
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Simulator.png?raw=true)
-
 ---
 
 # 3. Understanding Design and Testbench
@@ -33,6 +31,8 @@ We will use **Icarus Verilog (Iverilog)** in this course. It is an open-source V
 
   - **Primary Inputs**: Used to apply test vectors (stimulus).
   - **Primary Outputs**: Used to observe the behavior.
+ 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Simulator.png?raw=true)
 
 ## 3.2 Testbench
 
