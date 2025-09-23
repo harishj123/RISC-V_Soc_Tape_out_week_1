@@ -264,6 +264,8 @@ show
 
 This will generate a **netlist** that maps your design to real standard cells.
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/mux2x1.png?raw=true)
+
 ---
 
 # 15. Summary
