@@ -131,7 +131,7 @@ gvim tb_good_mux.v -o good_mux.v
 
 This helps you understand how testbenches apply stimuli to the design.
 
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Design_and_tb_files.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/Design_and_tb_files.png?raw=true)
 
 ---
 
