@@ -174,6 +174,7 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
    ```bash
    show
    ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/mux2x1.png?raw=true)
 
 ---
 
