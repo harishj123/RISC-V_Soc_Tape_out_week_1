@@ -1,6 +1,6 @@
 # RISC-V_Soc_Tape_out_week_1
 
-# 🔧 Verilog RTL Design and Synthesis – Sky130 Workshop
+# Verilog RTL Design and Synthesis – Sky130 Workshop
 
 Welcome, Evaluator.
 
@@ -8,9 +8,9 @@ This repository documents my progress through a 5-day workshop on **RTL Design a
 
 ---
 
-## 📅 Weekly Progress Overview
+## Weekly Progress Overview
 
-### ✅ Day 1: Verilog RTL Design, Simulation & Introduction to Synthesis
+### Day 1: Verilog RTL Design, Simulation & Introduction to Synthesis
 - [✔️ Week 1 Report](day1/week1/week1_report.md)
 - Topics Covered:
   - Verilog RTL design
@@ -20,21 +20,21 @@ This repository documents my progress through a 5-day workshop on **RTL Design a
   - Introduction to Yosys synthesis
 - Tools Used: `Iverilog`, `GTKWave`, `Yosys`
 
-### 📌 Day 2: [Pending]
+### Day 2: [Pending]
 > *Coming soon...*
 
-### 📌 Day 3: [Pending]
+### Day 3: [Pending]
 > *Coming soon...*
 
-### 📌 Day 4: [Pending]
+### Day 4: [Pending]
 > *Coming soon...*
 
-### 📌 Day 5: [Pending]
+### Day 5: [Pending]
 > *Coming soon...*
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 | Tool        | Purpose                        |
 |-------------|--------------------------------|
