@@ -62,7 +62,7 @@ Even though we use **Iverilog**, the same flow is applicable for other simulator
 2. A **VCD(Vlaue Change Dump Format) File** is created.
 3. View the waveform using **GTKWave**.
 
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Iverilog_simulation_flow.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/Iverilog_simulation_flow.png?raw=true)
 
 ---
 
