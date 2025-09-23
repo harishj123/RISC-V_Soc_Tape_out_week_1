@@ -40,7 +40,8 @@ We will use **Icarus Verilog (Iverilog)** in this course. It is an open-source V
 * It does **not** have any primary inputs or outputs.
 * It instantiates the design and provides input values over time.
 
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Testbench.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/Testbench.png?raw=true)
+
 ---
 
 # 4. How Simulators Work
