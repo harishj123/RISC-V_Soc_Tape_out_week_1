@@ -45,5 +45,3 @@ This repository documents my progress through a 5-day workshop on **RTL Design a
 
 ---
 
-## 📂 Repository Structure
-
