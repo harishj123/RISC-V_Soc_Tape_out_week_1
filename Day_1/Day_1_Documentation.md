@@ -114,7 +114,7 @@ To open the VCD file in GTKWave:
 ```bash
 gtkwave tb_good_mux.vcd
 ```
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/gtkwave_output.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/gtkwave_output.png?raw=true)
 
 You can now graphically view all input/output transitions.
 
