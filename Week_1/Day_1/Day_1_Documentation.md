@@ -187,6 +187,8 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
 
 ✅ If the outputs match, the synthesis is functionally correct.
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Verify_the_synthesis.png?raw=true)
+
 ---
 
 # 11. Logic Synthesis and Gate-Level Modeling
