@@ -159,7 +159,7 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
 2. **Read Liberty file (.lib)**:
 
    ```bash
-   read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+   read_liberty -lib /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 
 3. **Synthesize**:
@@ -171,13 +171,13 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
 4. **Technology Mapping**:
 
    ```bash
-   abc -liberty /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+   abc -liberty /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 
 5. **Write Netlist**:
 
    ```bash
-   write_verilog good_mux_netlist.v
+   write_verilog good_mux.v
    ```
 
 6. **Visualize** the synthesized netlist:
@@ -185,7 +185,7 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
    ```bash
    show
    ```
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/mux2x1.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/mux2x1.png?raw=true)
 
 ---
 
@@ -264,8 +264,6 @@ show
 ```
 
 This will generate a **netlist** that maps your design to real standard cells.
-
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/mux2x1.png?raw=true)
 
 ---
 
