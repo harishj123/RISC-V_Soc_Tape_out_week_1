@@ -144,7 +144,7 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
 * We use **Yosys**, an open-source synthesis tool.
 * It maps the RTL design to standard cells (like AND, OR, NAND, etc.) defined in `.lib`.
 
-![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Week_1/Day_1/Synthesizer.png?raw=true)
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_1/Synthesizer.png?raw=true)
 
 ---
 
