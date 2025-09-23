@@ -149,14 +149,23 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
 ---
 
 ## 9.2 Yosys Synthesis Flow
+1. **Start Yosys**:
+  ```bash
+     yosys
+   ```
 
-1. **Read Verilog file**:
+2. **Read Liberty file (.lib)**:
+
+   ```bash
+   read_liberty -lib /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+3. **Read Verilog file**:
 
    ```bash
    read_verilog good_mux.v
    ```
 
-2. **Read Liberty file (.lib)**:
+4. **Read Liberty file (.lib)**:
 
    ```bash
    read_liberty -lib /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -174,13 +183,13 @@ A **synthesizer** converts **RTL code** (usually written in Verilog) into a **ga
    abc -liberty /lib/to/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 
-5. **Write Netlist**:
+6. **Write Netlist**:
 
    ```bash
    write_verilog good_mux.v
    ```
 
-6. **Visualize** the synthesized netlist:
+7. **Visualize** the synthesized netlist:
 
    ```bash
    show
