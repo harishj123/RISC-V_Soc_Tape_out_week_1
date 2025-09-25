@@ -355,6 +355,21 @@ always @(posedge clk or posedge reset) begin
         q <= d;      // Capture D at clock edge
 end
 ```
+## GTKWave
+
+``` bash
+# Compile design and testbench
+iverilog dff_asyncres.v tb_asyncres.v
+
+# Run simulation
+./a.out
+
+# Open waveform in GTKWave
+gtkwave tb_dff_asyncres.vcd
+```
+
+## Synthesis of Asynchronous Reset
+
 
 ---
 
