@@ -625,6 +625,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 # View the synthesized design
 show
 ```
+
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul2_synth.png?raw=true)
 
 For Mul2 we need no hardware for its working,It is simplified as
@@ -639,6 +640,29 @@ In the above diagram, we can notice no hardware require it is represented as zer
 
 Now synthesis the `mult_8.v` module.
 
+```bash
+yosys
+```
+
+Inside Yosys:
+
+```tcl
+# Load standard cell library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog module
+read_verilog mult_8.v
+
+# Run synthesis with top module 'mul2'
+synth -top mult_8
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# View the synthesized design
+show
+```
 
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul8_derive.png?raw=true)
 
