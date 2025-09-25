@@ -312,6 +312,9 @@ In a **purely combinational circuit**:
 * They **sample and store the output at the clock edge**, stabilizing it.
 * This ensures that the next stage always sees a **stable, glitch-free value**.
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/remove_gitches.png?raw=true)
+  
+
 ---
 
 ### 8. Initialization of Flip-Flops
