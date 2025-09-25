@@ -106,6 +106,8 @@ So far, we have used **single modules**, but in real designs, we often deal with
 * `multiple_modules.v` → top module
 * Inside it: `sub_module1` and `sub_module2`
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/sub_module_block.png?raw=true)
+
 we can open the file by
 
   ```bash
