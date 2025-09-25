@@ -278,6 +278,9 @@ show
 2. Faster compilation since only one submodule is synthesized.
 3. Promotes **modular reuse**—synthesized submodules can be instantiated multiple times.
 
+   ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/sub_modules%20in%20top.png?raw=true)
+   
+
 **Divide and Conquer:**
 
 * Instead of giving a massive design to the tool, break it into smaller modules.
