@@ -110,8 +110,7 @@ we can open the file by
   ```bash
     gvim multiple_modules.v
   ```
-
-  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_modules.png?raw=true)
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_module_verilog.png?raw=true)
 
 We can synthesize `multiple_modules` using **Yosys** as follows:
 
@@ -191,6 +190,7 @@ write_verilog multiple_modules_hier.v
 ```bash
 !gvim multiple_modules_hier.v
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_modules.png?raw=true)
 
 ---
 
