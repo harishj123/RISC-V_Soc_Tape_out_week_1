@@ -542,7 +542,30 @@ iverilog dff_asyncres_syncres.v tb_dff_asyncres_syncres.v
 # Open waveform in GTKWave
 gtkwave tb_dff_asyncres_syncres.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/dff_asyncres_syncres.png?raw=true)
 
+## Synthesis
+
+```bash
+# Load standard cell library (Sky130)
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read design
+read_verilog dff_asyncres_syncres.v
+
+# Run synthesis
+synth -top dff_asyncre_syncres
+
+# Map DFFs to technology-specific cells
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Optimize and map logic
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+# Show schematic
+show
+
+```
 
 
 
