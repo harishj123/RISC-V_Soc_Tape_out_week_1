@@ -408,7 +408,40 @@ always @(posedge clk or posedge set) begin
         q <= d;      // Capture D at clock edge
 end
 ```
+## GTKWave
 
+``` bash
+# Compile design and testbench
+iverilog dff_async_set.v tb_dff_async_set.v
+
+# Run simulation
+./a.out
+
+# Open waveform in GTKWave
+gtkwave tb_dff_async_set.vcd
+```
+## Synthesis
+
+```bash
+# Load standard cell library (Sky130)
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read design
+read_verilog dff_async_set.v
+
+# Run synthesis
+synth -top dff_async_set
+
+# Map DFFs to technology-specific cells
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Optimize and map logic
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+# Show schematic
+show
+
+```
 ---
 
 #### 9.3 Synchronous Reset
