@@ -420,6 +420,8 @@ iverilog dff_async_set.v tb_dff_async_set.v
 # Open waveform in GTKWave
 gtkwave tb_dff_async_set.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/Asynchronous_set.png?raw=true)
+
 ## Synthesis
 
 ```bash
