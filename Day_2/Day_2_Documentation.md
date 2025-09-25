@@ -580,6 +580,8 @@ This repository contains simple Verilog multiplier modules:
 
 Both modules are implemented using **continuous assignments**, which can be efficiently synthesized in hardware.
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mult_*_file.png?raw=true)
+
 ---
 
 ## **Opening the Modules in GVim**
