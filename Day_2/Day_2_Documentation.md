@@ -231,7 +231,7 @@ flatten
 write_verilog -noattr multiple_modules_flat.v
 ```
 
-* You can open the flattened file in GVim:
+* open the flattened file in GVim:
 
 ```bash
 !gvim multiple_modules_flat.v
@@ -284,14 +284,7 @@ show
 
 ---
 
-### 7. Summary
 
-| Approach               | Description                        | Pros                                          |
-| ---------------------- | ---------------------------------- | --------------------------------------------- |
-| Hierarchical           | Keep modules as-is                 | Easier to debug, maintain structure           |
-| Flattened              | Combine all submodules into one    | Tool can optimize globally, simpler flat view |
-| Module-level synthesis | Synthesize one submodule at a time | Faster, reusable, divide and conquer          |
 
----
 
 
