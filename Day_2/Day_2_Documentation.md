@@ -569,5 +569,56 @@ show
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/dff_asyncres_syncres_syn.png?raw=true)
 
+---
 
+# Multiplier Modules (`mult_2.v` and `mult_9.v`)
+
+This repository contains simple Verilog multiplier modules:
+
+1. **`mult_2.v`** – Multiplies input by 2.
+2. **`mult_9.v`** – Multiplies input by 9.
+
+Both modules are implemented using **continuous assignments**, which can be efficiently synthesized in hardware.
+
+---
+
+## **Opening the Modules in GVim**
+
+To open all multiplier files at once:
+
+```bash
+gvim mult_*.v -o
+```
+
+* `-o` opens each file in a separate tab in GVim.
+* `mult_*.v` will match all files starting with `mult_` (e.g., `mult_2.v`, `mult_9.v`).
+
+---
+
+## **Synthesis Using Yosys**
+
+At First synthesizing the `mult_2.v` module.
+
+```bash
+yosys
+```
+
+Inside Yosys:
+
+```tcl
+# Load standard cell library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog module
+read_verilog mult_2.v
+
+# Run synthesis with top module 'mul2'
+synth -top mul2
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# View the synthesized design
+show
+```
 
