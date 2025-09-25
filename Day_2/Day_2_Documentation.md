@@ -100,3 +100,106 @@ This is **Day 2** of my journey into digital design. On **Day 1**, we explored t
 
 ---
 
+So far, we have used **single modules**, but in real designs, we often deal with **multiple modules**. For example, in the folder `verilog_files`, we have:
+
+* `multiple_modules.v` → top module
+* Inside it: `sub_module1` and `sub_module2`
+
+We can synthesize `multiple_modules` using **Yosys** as follows:
+
+---
+
+## **1. Start Yosys**
+
+```bash
+yosys
+```
+
+---
+
+## **2. Read the Technology Library**
+
+```yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+* This loads the **SkyW130nm standard cell library** for synthesis.
+
+---
+
+## **3. Read the Multi-Module Verilog File**
+
+```yosys
+read_verilog multiple_modules.v
+```
+
+* This reads the **top module** along with all **sub-modules** defined inside.
+
+---
+
+## **4. Synthesize the Top Module**
+
+```yosys
+synth -top multiple_modules
+```
+
+* `-top` specifies which module to synthesize.
+* Sub-modules are synthesized **hierarchically** as part of the top module.
+
+---
+
+## **5. Add Technology Mapping**
+
+```yosys
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+* Maps the RTL to **actual standard cells** in the library.
+
+---
+
+## **6. Visualize the Netlist**
+
+```yosys
+show multiple_modules
+```
+
+* Opens a **graphical view** of the synthesized module and its sub-modules.
+
+
+
+---
+
+## **7. Write the Synthesized Verilog**
+
+```yosys
+write_verilog multiple_modules_hier.v
+```
+
+---
+
+## **8. Open the Synthesized File in gvim**
+
+```bash
+!gvim multiple_modules_hier.v
+```
+
+---
+
+## **9. Optional: Write Verilog Without Attributes**
+
+```yosys
+write_verilog -noattr multiple_modules_hier.v
+```
+
+---
+
+## **10. Verify in gvim Again**
+
+```bash
+!gvim multiple_modules_hier.v
+```
+
+---
+
+
