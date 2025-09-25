@@ -474,6 +474,7 @@ iverilog dff_syncres.v tb_dff_syncres.v
 # Open waveform in GTKWave
 gtkwave tb_dff_syncres.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/Syncres_gtk.png?raw=true)
 
 ## Synthesis
 
