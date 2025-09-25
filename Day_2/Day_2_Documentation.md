@@ -333,6 +333,83 @@ In a **purely combinational circuit**:
 
 ---
 
+### 9. Flip-Flop with Asynchronous and Synchronous Reset/Set
+
+Flip-flops often need **initialization** so that they don’t start with garbage values. This is done using **reset** (clear output to `0`) or **set** (force output to `1`).
+These can be either **asynchronous** or **synchronous**.
+
+---
+
+#### 9.1 Asynchronous Reset
+
+* The reset takes effect **immediately**, independent of the clock.
+* If `reset = 1`, the output goes to `0` right away.
+* If `reset = 0`, the output follows `D` only at the next clock edge.
+
+```verilog
+// Asynchronous Reset
+always @(posedge clk or posedge reset) begin
+    if (reset)
+        q <= 1'b0;   // Output forced to 0 immediately
+    else
+        q <= d;      // Capture D at clock edge
+end
+```
+
+---
+
+#### 9.2 Asynchronous Set
+
+* If `set = 1`, the output goes to `1` immediately.
+* If `set = 0`, the output follows `D` at the next clock edge.
+
+```verilog
+// Asynchronous Set
+always @(posedge clk or posedge set) begin
+    if (set)
+        q <= 1'b1;   // Output forced to 1 immediately
+    else
+        q <= d;      // Capture D at clock edge
+end
+```
+
+---
+
+#### 9.3 Synchronous Reset
+
+* Reset takes effect **only at the clock edge**.
+* If `reset = 1`, output becomes `0` at the **next rising edge**.
+
+```verilog
+// Synchronous Reset
+always @(posedge clk) begin
+    if (reset)
+        q <= 1'b0;   // Reset only at clock edge
+    else
+        q <= d;
+end
+```
+
+---
+
+#### 9.4 Priority: Asynchronous + Synchronous Reset Together
+
+* When **both asynchronous and synchronous resets** are present, **asynchronous reset has higher priority**.
+* Typical code structure:
+
+```verilog
+// Async + Sync Reset with Priority
+always @(posedge clk or posedge async_reset) begin
+    if (async_reset)
+        q <= 1'b0;          // Highest priority
+    else if (sync_reset)
+        q <= 1'b0;          // Next priority
+    else
+        q <= d;             // Normal operation
+end
+```
+
+---
 
 
 
