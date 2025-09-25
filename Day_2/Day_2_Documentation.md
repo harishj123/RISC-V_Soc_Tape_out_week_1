@@ -19,7 +19,8 @@ This is **Day 2** of my journey into digital design. On **Day 1**, we explored t
    ```
 
    ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/lib.png?raw=true)
-4. **Tip:** If the text is hard to read:
+   
+5. **Tip:** If the text is hard to read:
 
    * Press `Esc`
    * Type `Shift + :` and enter:
@@ -266,6 +267,8 @@ synth -top sub_module1
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/submodule1.png?raw=true)
+
 
 **Benefits of module-level synthesis:**
 
