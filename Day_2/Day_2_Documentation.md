@@ -105,6 +105,14 @@ So far, we have used **single modules**, but in real designs, we often deal with
 * `multiple_modules.v` → top module
 * Inside it: `sub_module1` and `sub_module2`
 
+we can open the file by
+
+  ```bash
+    gvim multiple_modules.v
+  ```
+
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_modules.png?raw=true)
+
 We can synthesize `multiple_modules` using **Yosys** as follows:
 
 ---
