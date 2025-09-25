@@ -675,10 +675,11 @@ use below command to get synthesized mult8
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul8_synth_code.png?raw=true)
 
+This how the mult8 is simplified
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul8_derive.png?raw=true)
 
-**Summary:**
+#### **Summary:**
 
 1. `.lib` files define standard cells, delays, area, power, and PVT corners.
 2. Hierarchical synthesis keeps modules separate; flattening merges all logic.
