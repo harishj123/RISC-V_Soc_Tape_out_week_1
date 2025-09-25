@@ -207,7 +207,7 @@ write_verilog -noattr multiple_modules_hier.v
 ```bash
 !gvim multiple_modules_hier.v
 ```
-![image alt](
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_modules_hier.png?raw=true)
 
 ---
 
