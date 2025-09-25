@@ -284,6 +284,47 @@ show
 
 ---
 
+Got it! I’ll continue your GitHub-ready notes, starting numbering from **7** and explaining **why we need flops** clearly and concisely:
+
+---
+
+### 7. Why We Need Flip-Flops (D Flip-Flops)
+
+In a **purely combinational circuit**:
+
+* Multiple gates are connected in series or parallel.
+* **Each gate has a propagation delay**.
+* When inputs change, intermediate signals can produce **glitches** (temporary incorrect values).
+* The more gates or combinational logic you have, the **higher the chance of glitches** at the output.
+
+**Problem:**
+
+* Glitches can propagate and cause **unstable outputs** if we directly use combinational outputs in the next stage.
+
+**Solution: Use D Flip-Flops**
+
+* D flip-flops are placed **between outputs of combinational circuits**.
+* They **sample and store the output at the clock edge**, stabilizing it.
+* This ensures that the next stage always sees a **stable, glitch-free value**.
+
+---
+
+### 8. Initialization of Flip-Flops
+
+* At power-up, flip-flops can hold **random or “garbage” values**.
+* To avoid this, flip-flops are **initialized** using **reset** or **set** pins:
+
+| Pin Type | Function         | Notes                              |
+| -------- | ---------------- | ---------------------------------- |
+| Reset    | Sets output to 0 | Can be synchronous or asynchronous |
+| Set      | Sets output to 1 | Can be synchronous or asynchronous |
+
+* **Synchronous reset/set:** Takes effect only at the clock edge.
+* **Asynchronous reset/set:** Takes effect immediately, independent of the clock.
+* Initialization ensures that combinational circuits **see a valid input** from flip-flops, avoiding garbage propagation.
+
+---
+
 
 
 
