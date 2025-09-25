@@ -678,3 +678,11 @@ use below command to get synthesized mult8
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul8_derive.png?raw=true)
 
+**Summary:**
+
+1. `.lib` files define standard cells, delays, area, power, and PVT corners.
+2. Hierarchical synthesis keeps modules separate; flattening merges all logic.
+3. Module-level synthesis enables divide-and-conquer for large designs.
+4. Flip-flops prevent glitches; reset/set initialize outputs reliably.
+5. Simple multipliers can synthesize efficiently, sometimes needing minimal hardware.
+
