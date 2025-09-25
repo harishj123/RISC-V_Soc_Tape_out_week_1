@@ -15,10 +15,13 @@ This is **Day 2** of my journey into digital design. On **Day 1**, we explored t
 
    ```bash
    gvim ../lib/sky130_fd_sc_hd__tt_025C1v80.lib
+   
    ```
+
+   ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/lib.png?raw=true)
 4. **Tip:** If the text is hard to read:
 
-   * Press `Esc` in gvim.
+   * Press `Esc`
    * Type `Shift + :` and enter:
 
      ```vim
@@ -64,10 +67,10 @@ This is **Day 2** of my journey into digital design. On **Day 1**, we explored t
 2. **Example cell definition:**
 
    ```liberty
-   cell("sky130_fd_sc_hd__a2111o_1") { ... }
+   cell("sky130_fd_sc_hd__a2111o_4") { ... }
    ```
 
-   * `a2111o_1` → Contains 2-input AND and OR logic gates.
+   * `a2111o_4` → Contains 2-input AND and OR logic gates.
 
      ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/cell.png?raw=true)
 
