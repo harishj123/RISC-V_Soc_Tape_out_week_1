@@ -516,7 +516,7 @@ show
 * Typical code structure:
 
 ```verilog
-// Async + Sync Reset with Priority
+module dff_asyncres_syncres (input wire clk,input wire async_reset,input wire sync_reset,input wire d,output reg q);
 always @(posedge clk or posedge async_reset) begin
     if (async_reset)
         q <= 1'b0;          // Highest priority
@@ -525,9 +525,23 @@ always @(posedge clk or posedge async_reset) begin
     else
         q <= d;             // Normal operation
 end
-```
 
+endmodule
+
+```
 ---
+## GTKWave
+
+``` bash
+# Compile design and testbench
+iverilog dff_asyncres_syncres.v tb_dff_asyncres_syncres.v
+
+# Run simulation
+./a.out
+
+# Open waveform in GTKWave
+gtkwave tb_dff_asyncres_syncres.vcd
+```
 
 
 
