@@ -348,12 +348,14 @@ These can be either **asynchronous** or **synchronous**.
 
 ```verilog
 // Asynchronous Reset
-always @(posedge clk or posedge reset) begin
-    if (reset)
-        q <= 1'b0;   // Output forced to 0 immediately
-    else
-        q <= d;      // Capture D at clock edge
-end
+module dff_asyncres (input  clk,input  async_reset,input  d,output reg q);
+    always @(posedge clk or posedge async_reset) begin
+        if (async_reset)
+            q <= 1'b0;   // Output forced to 0 immediately
+        else
+            q <= d;      // Capture D at clock edge
+    end
+endmodule
 ```
 ## GTKWave
 
@@ -401,12 +403,15 @@ show
 
 ```verilog
 // Asynchronous Set
-always @(posedge clk or posedge set) begin
-    if (set)
-        q <= 1'b1;   // Output forced to 1 immediately
-    else
-        q <= d;      // Capture D at clock edge
-end
+module dff_async_set (input  clk,input  async_set,input  d,output reg q);
+    always @(posedge clk or posedge async_set) begin
+        if (async_set)
+            q <= 1'b1;   // Output forced to 1 immediately
+        else
+            q <= d;      // Capture D at clock edge
+    end
+endmodule
+
 ```
 ## GTKWave
 
@@ -454,13 +459,16 @@ show
 * If `reset = 1`, output becomes `0` at the **next rising edge**.
 
 ```verilog
-// Synchronous Reset
-always @(posedge clk) begin
-    if (reset)
-        q <= 1'b0;   // Reset only at clock edge
-    else
-        q <= d;
-end
+// Synchronous Reset D Flip-Flop
+module dff_syncres (input  clk,input  reset,input  d,output reg q);
+    always @(posedge clk) begin
+        if (reset)
+            q <= 1'b0;   // Reset only at clock edge
+        else
+            q <= d;      // Capture D at clock edge
+    end
+endmodule
+
 ```
 ## GTKWave
 
