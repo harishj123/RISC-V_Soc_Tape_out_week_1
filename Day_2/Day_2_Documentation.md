@@ -629,6 +629,10 @@ show
 
 For Mul2 we need no hardware for its working,It is simplified as
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/append_zero.png?raw=true)
+
+
+
 Now synthesis the `mult_8.v` module.
 
 
