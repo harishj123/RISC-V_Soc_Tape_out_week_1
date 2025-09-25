@@ -177,7 +177,7 @@ show multiple_modules
 
 ---
 
-## **7. Write the Synthesized Verilog**
+## **7. Write the Synthesized Verilog (netlist)**
 
 ```yosys
 write_verilog multiple_modules_hier.v
