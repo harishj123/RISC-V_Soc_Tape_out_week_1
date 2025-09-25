@@ -462,10 +462,45 @@ always @(posedge clk) begin
         q <= d;
 end
 ```
+## GTKWave
+
+``` bash
+# Compile design and testbench
+iverilog dff_syncres.v tb_dff_syncres.v
+
+# Run simulation
+./a.out
+
+# Open waveform in GTKWave
+gtkwave tb_dff_syncres.vcd
+```
+
+## Synthesis
+
+```bash
+# Load standard cell library (Sky130)
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read design
+read_verilog dff_syncres.v
+
+# Run synthesis
+synth -top dff_syncres
+
+# Map DFFs to technology-specific cells
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Optimize and map logic
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+# Show schematic
+show
+
+```
 
 ---
 
-#### 9.4 Priority: Asynchronous + Synchronous Reset Together
+#### 9.4 Asynchronous + Synchronous Reset Together
 
 * When **both asynchronous and synchronous resets** are present, **asynchronous reset has higher priority**.
 * Typical code structure:
