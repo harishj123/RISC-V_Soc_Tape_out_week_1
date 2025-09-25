@@ -599,6 +599,8 @@ gvim mult_*.v -o
 
 At First synthesizing the `mult_2.v` module.
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul2_block_diagram.png?raw=true)
+
 ```bash
 yosys
 ```
