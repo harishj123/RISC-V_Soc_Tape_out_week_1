@@ -241,6 +241,7 @@ write_verilog -noattr multiple_modules_flat.v
 ```vim
 :vsp multiple_modules_hier.v
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/VSP_command.png?raw=true)
 
 **Key point:**
 
