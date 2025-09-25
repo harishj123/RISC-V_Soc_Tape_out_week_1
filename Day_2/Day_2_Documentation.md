@@ -69,6 +69,8 @@ This is **Day 2** of my journey into digital design. On **Day 1**, we explored t
 
    * `a2111o_1` → Contains 2-input AND and OR logic gates.
 
+     ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/cell.png?raw=true)
+
 3. **To see the corresponding Verilog implementation:**
 
    ```vim
