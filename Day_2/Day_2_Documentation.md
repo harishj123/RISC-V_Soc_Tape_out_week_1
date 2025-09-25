@@ -629,6 +629,8 @@ show
 
 For Mul2 we need no hardware for its working,It is simplified as
 
+Now synthesis the `mult_8.v` module.
+
 
 
 
