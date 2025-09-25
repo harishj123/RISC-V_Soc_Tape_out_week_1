@@ -211,4 +211,83 @@ write_verilog -noattr multiple_modules_hier.v
 
 ---
 
+### 5. Flattening a Hierarchical Design
+
+In a hierarchical RTL design, modules are organized like this:
+
+```
+Top
+ ├── Submodule1
+ ├── Submodule2
+ └── Submodule3
+```
+
+* Using **flattening**, all submodules are combined into a **single module**.
+* This can be done in Yosys with:
+
+```yosys
+flatten
+write_verilog -noattr multiple_modules_flat.v
+```
+
+* You can open the flattened file in GVim:
+
+```bash
+!gvim multiple_modules_flat.v
+```
+
+* To compare the hierarchical and flattened designs, use vertical split in GVim:
+
+```vim
+:vsp multiple_modules_hier.v
+```
+
+**Key point:**
+
+* After flattening, **no submodules remain**; all logic is combined into a single module.
+
+---
+
+### 6. Module-level Synthesis
+
+Sometimes, we want to **synthesize at the submodule level** instead of the full design. This is useful when:
+
+* The full design is very large (divide and conquer).
+* We want to reuse submodules multiple times without re-synthesizing them.
+
+**Steps in Yosys:**
+
+```yosys
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog sub_module1.v
+synth -top sub_module1
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+**Benefits of module-level synthesis:**
+
+1. Easier handling of large designs.
+2. Faster compilation since only one submodule is synthesized.
+3. Promotes **modular reuse**—synthesized submodules can be instantiated multiple times.
+
+**Divide and Conquer:**
+
+* Instead of giving a massive design to the tool, break it into smaller modules.
+* Synthesize each module independently.
+* This ensures better tool performance and easier debugging.
+
+---
+
+### 7. Summary
+
+| Approach               | Description                        | Pros                                          |
+| ---------------------- | ---------------------------------- | --------------------------------------------- |
+| Hierarchical           | Keep modules as-is                 | Easier to debug, maintain structure           |
+| Flattened              | Combine all submodules into one    | Tool can optimize globally, simpler flat view |
+| Module-level synthesis | Synthesize one submodule at a time | Faster, reusable, divide and conquer          |
+
+---
+
 
