@@ -662,6 +662,14 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 # View the synthesized design
 show
 ```
+
+use below command to get synthesized mult8
+
+```bash
+  write_verilog -noattr mult8_net.v
+  !gvim mult8_net.v
+```
+
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/mul8_synth_code.png?raw=true)
 
 
