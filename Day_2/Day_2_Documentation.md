@@ -173,7 +173,7 @@ show multiple_modules
 
 * Opens a **graphical view** of the synthesized module and its sub-modules.
 
-
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_2/multiple_module_synth.png?raw=true)
 
 ---
 
