@@ -253,3 +253,89 @@ end
 > ⚠ Using non-blocking statements ensures **all RHS signals are evaluated first**, then assigned to LHS in parallel, avoiding unexpected simulation behavior.
 
 
+# 🧪 Day 4 Lab: Ternary Operator MUX
+
+In today's lab, we explore the **ternary operator** in Verilog, simulate its behavior, synthesize it, and perform **Gate Level Simulation (GLS)**.
+
+---
+
+## 🔹 Step 1: Open the Design File
+
+Open the MUX design file using GVim:
+
+```bash
+gvim ternary_operator_mux.v
+```
+
+- This file implements a MUX using the **ternary operator (`? :`)**.
+
+---
+
+## 🔹 Step 2: Generate Simulation Waveform
+
+Use **Icarus Verilog (iverilog)** to simulate the design with the testbench:
+
+```bash
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+- `iverilog` → Compiles the Verilog design and testbench.  
+- `./a.out` → Runs the simulation.  
+- `gtkwave` → Opens the **waveform viewer** to analyze signal behavior.
+
+---
+
+## 🔹 Step 3: Synthesis
+
+Synthesize the design using **Yosys**:
+
+```bash
+yosys
+```
+
+Inside Yosys, run the following commands:
+
+```tcl
+# Load timing library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog design
+read_verilog ternary_operator_mux.v
+
+# Synthesize top module
+synth -top ternary_operator_mux
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write synthesized netlist
+write_verilog -noattr ternary_operator_mux_net.v
+
+# Visualize schematic
+show
+```
+
+- The synthesized netlist (`ternary_operator_mux_net.v`) is now **mapped to actual standard cells**.
+
+---
+
+## 🔹 Step 4: Gate Level Simulation (GLS)
+
+Run GLS to validate **netlist functionality and timing**:
+
+```bash
+iverilog ../lib/verilog_model/primitives.v ../lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+- Include **primitive and standard cell models** for accurate GLS.  
+- `ternary_operator_mux_net.v` → Synthesized netlist as the **DUT**.  
+- `gtkwave` → Visualizes waveform to ensure **behavior matches RTL simulation**.  
+
+---
+
+
+
