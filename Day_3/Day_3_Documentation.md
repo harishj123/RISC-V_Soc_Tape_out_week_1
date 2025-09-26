@@ -25,12 +25,13 @@ $Y = \overline{(AB + C)}$
   $Y = \overline{C}$
   → Only one **inverter** is needed for the output.
 
-  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/inv.png?raw=true)
-
 📉 **Transistor Count in CMOS:**
 
 * For $Y = \overline{(AB + C)}$: needs **6 transistors**
+     ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/constant_propagation.png?raw=true)
+  
 * For $Y = \overline{C}$: needs **2 transistors**
+     ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/inv.png?raw=true)
 
 ✅ This demonstrates **constant propagation optimisation**.
 
