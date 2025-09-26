@@ -315,8 +315,10 @@ Synthesis opt_check4.v file
 multiple_modules.v
 
 ``` bash
-  multiple_modules.v
+  gvim multiple_modules.v
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/multiple_module.png?raw=true)
+
 
 
 
