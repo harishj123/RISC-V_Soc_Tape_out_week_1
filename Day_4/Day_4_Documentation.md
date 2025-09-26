@@ -527,6 +527,8 @@ iverilog ../lib/verilog_model/primitives.v ../lib/verilog_model/sky130_fd_sc_hd_
 gtkwave tb_blocking_caveat.vcd
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/blocking_caveat_gls.png?raw=true)
+
 - Include **primitive and standard cell models** for accurate GLS.  
 - `blocking_caveat_net.v` → Synthesized netlist as the **DUT**.  
 - `gtkwave` → Visualizes waveform to verify **behavior matches RTL simulation**.
