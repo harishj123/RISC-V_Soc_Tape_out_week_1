@@ -310,6 +310,16 @@ opt_check4.v
 
 Synthesis opt_check4.v file
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check4_synth.png?raw=true)
+
+multiple_modules.v
+
+``` bash
+  multiple_modules.v
+```
+
+
+
 
 
 
