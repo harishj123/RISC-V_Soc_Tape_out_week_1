@@ -436,7 +436,7 @@ show
 Run GLS to validate **netlist behavior and timing**:
 
 ```bash
-iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v bad_mux_net.v tb_bad_mux.v
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v bad_mux.v tb_bad_mux.v
 ./a.out
 gtkwave tb_bad_mux.vcd
 ```
