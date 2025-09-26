@@ -137,6 +137,9 @@ Suppose logic drives multiple flip-flops: `FF_A`, `FF_B`, and `FF_C`. If `A` is 
 
 Retiming is shifting logic across flip-flops to balance delays:
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/retiming.png?raw=true)
+
+
 * Two D flip-flops are connected sequentially with two logic blocks.
 * Logic 1 has **5 ns delay**, Logic 2 has **2 ns delay**.
 
