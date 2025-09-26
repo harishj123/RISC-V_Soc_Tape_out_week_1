@@ -548,9 +548,14 @@ gvim counter_opt2.v
 
 Inside the file, change the output assignment to:
 
+ The changes can be done by pressing i (in insert mode).
+
 ```verilog
 assign q = (count[2:0] == 3'b100);
 ```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/counter_opt2_code.png?raw=true)
+
 
 * Here `q` will be `1` **only when counter value = `100` (decimal 4)**.
 * Otherwise `q = 0`.
