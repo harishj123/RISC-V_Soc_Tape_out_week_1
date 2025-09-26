@@ -536,3 +536,19 @@ gtkwave tb_blocking_caveat.vcd
 - `gtkwave` → Visualizes waveform to verify **behavior matches RTL simulation**.
 
 ---
+
+# ✅Summary: 
+
+1. **GLS (Gate Level Simulation):** Checks the synthesized netlist against RTL for correct logic and timing.  
+
+2. **Blocking (`=`) vs Non-Blocking (`<=`):**  
+   - Blocking executes in order, can use old values.  
+   - Non-blocking evaluates all RHS in parallel, safe for sequential logic.  
+
+3. **Sensitivity List:** Always use complete lists (`always @(*)`) to avoid simulation mismatches.  
+
+4. **Synthesis-Simulation Mismatch Causes:** Missing sensitivity, wrong blocking/non-blocking usage, non-standard coding.  
+
+5. **Lab Steps:** Open design → Simulate → Synthesize → Generate gate-level netlist → Run GLS to verify behavior matches RTL.  
+
+---
