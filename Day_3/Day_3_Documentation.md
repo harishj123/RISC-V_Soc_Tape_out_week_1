@@ -523,10 +523,6 @@ It removes registers/gates that **do not contribute to primary outputs**.
 
 ---
 
-Perfect 🚀 let’s write this step by step for your **GitHub notes** in a simple way.
-
----
-
 ## 🟢 Unused Output Optimization – Example 2
 
 ### Step 1: Copy the Original File
