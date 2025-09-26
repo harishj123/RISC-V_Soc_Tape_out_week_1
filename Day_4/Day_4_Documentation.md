@@ -510,6 +510,8 @@ write_verilog -noattr blocking_caveat_net.v
 show
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/blocking_caveat_synth.png?raw=true)
+
 - `blocking_caveat_net.v` → Synthesized **gate-level netlist** mapped to standard cells.  
 - Use this netlist to check how **blocking assignments affect synthesis outputs**.
 
