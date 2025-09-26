@@ -185,6 +185,8 @@ Open the first file for inspection:
 gvim opt_check.v
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check.v.png?raw=true)
+
 ---
 
 ## **2️⃣ `opt_check.v` Example**
@@ -204,7 +206,7 @@ y = a̅ ⋅ 0 + a ⋅ b
 y = 0 + a ⋅ b
 y = a ⋅ b
 
-✅ Optimized to a **single AND gate**
+✅ Optimized to a single AND gate
 
 ```
 
