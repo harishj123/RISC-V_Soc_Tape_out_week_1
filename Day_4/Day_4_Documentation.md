@@ -336,6 +336,9 @@ iverilog ../lib/verilog_model/primitives.v ../lib/verilog_model/sky130_fd_sc_hd_
 gtkwave tb_ternary_operator_mux.vcd
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/ternary_op_after_GLS.png?raw=true)
+
+
 - Include **primitive and standard cell models** for accurate GLS.  
 - `ternary_operator_mux_net.v` → Synthesized netlist as the **DUT**.  
 - `gtkwave` → Visualizes waveform to ensure **behavior matches RTL simulation**.  
