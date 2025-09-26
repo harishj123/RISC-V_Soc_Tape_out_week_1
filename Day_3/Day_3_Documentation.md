@@ -428,6 +428,7 @@ show
 
 Perform same for remaining dff files.
 
+----
 **dff_const2.v**
 
 open gtkwave
@@ -438,6 +439,7 @@ synthesis
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const2_synth.png?raw=true)
 
+---
 **dff_const3.v**
 
 open gtkwave
@@ -448,6 +450,7 @@ synthesis
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const3_synth.png?raw=true)
 
+---
 **dff_const4.v**
 
 open gtkwave
@@ -458,6 +461,7 @@ synthesis
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const4_synth.png?raw=true)
 
+---
 **dff_const5.v**
 
 open gtkwave
@@ -466,7 +470,9 @@ open gtkwave
 
 synthesis
 
-![image alt](
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const5_synth.png?raw=true)
+
+---
 
 
 
