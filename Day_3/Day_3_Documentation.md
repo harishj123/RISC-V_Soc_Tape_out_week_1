@@ -474,6 +474,51 @@ synthesis
 
 ---
 
+## 🟢 Unused Output Optimization
+
+open counter_opt.v file by
+
+``` bash
+   gvim counter_opt.v
+```
+
+This file looks like a 3 bit up counter.
+
+### 🔎 Observation
+
+* The counter is **3-bit (count[2:0])** → counts like `000, 001, 010, ... 111`.
+* But output `q = count[0]` → **only the LSB is used**.
+* This means `count[1]` and `count[2]` are **unused**.
+
+👉 Since they do not affect the output, synthesis tools (like **Yosys**) will **optimize away** the unused flip-flops.
+
+* Final optimized design = **just a single D flip-flop toggling** (`0,1,0,1,...`).
+
+---
+
+### ⚡ Run Synthesis
+
+```sh
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+---
+
+### ✅ Result
+
+* Original RTL → 3-bit counter.
+* After optimization → **1 flip-flop** remains, because only `count[0]` impacts output.
+
+This is called **Unused Output Optimization** 🎯.
+It removes registers/gates that **do not contribute to primary outputs**.
+
+---
 
 
 
