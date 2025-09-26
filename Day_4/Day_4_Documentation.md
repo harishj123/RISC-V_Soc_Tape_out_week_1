@@ -208,3 +208,48 @@ end
 - Correct behavior for sequential logic like flip-flops.
 
 ---
+
+### 🔹 Another Caveat with Blocking Statements
+
+Consider the following Verilog code:
+
+```verilog
+module code();
+    reg q0;
+    reg y, a, b, c, qo;
+    always @(*) begin
+        y  = qo & c;
+        q0 = a | b;
+    end
+endmodule
+```
+
+**Explanation:**
+
+- The `always @(*)` block is **evaluated whenever any input changes** (`a`, `b`, `c`, `qo`).  
+- **Blocking assignment (`=`)** executes **sequentially**:  
+  1. `y = qo & c;` is evaluated first.  
+  2. `q0 = a | b;` is evaluated after.  
+
+- **Problem:**  
+  - `y` uses the **old value of `qo`** (from before `q0` is updated).  
+  - This may produce **unintended temporary values** or glitches in simulation.  
+  - After synthesis, **no delay is inserted**, so the hardware might **appear to work correctly**, but simulation shows the sequential dependency.  
+
+**Key Takeaway:**  
+
+- Even with `always @(*)`, **blocking statements execute sequentially**.  
+- Using **non-blocking (`<=`)** in sequential logic prevents these issues when assignments depend on each other.
+
+**Corrected Version (if sequential behavior is needed):**
+
+```verilog
+always @(*) begin
+    y  <= qo & c;
+    q0 <= a | b;
+end
+```
+
+> ⚠ Using non-blocking statements ensures **all RHS signals are evaluated first**, then assigned to LHS in parallel, avoiding unexpected simulation behavior.
+
+
