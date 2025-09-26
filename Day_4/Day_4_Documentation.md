@@ -132,4 +132,38 @@ assign y = (a & b) | c;
 
 ---
 
+# 📌 Synthesis and Simulation Mismatch
+
+Sometimes, the **output of RTL simulation** and **synthesized netlist simulation** do not match.  
+This is called a **synthesis-simulation mismatch**.  
+
+### 🔹 Common Causes
+
+1. **Missing sensitivity list**  
+2. **Blocking vs Non-Blocking assignments**  
+3. **Non-standard Verilog coding**  
+
+---
+
+## 🔹 Missing Sensitivity List
+
+### How the Simulator Works
+
+- Simulator updates the output **only when a signal in the sensitivity list changes**.  
+- If the sensitivity list is incomplete, some input changes **do not trigger the always block**, leading to **mismatches with synthesized hardware**.  
+
+---
+
+### Example: Multiplexer with Missing Sensitivity
+
+```verilog
+module mux(input i0, input i1, input sel, output reg y);
+    always @(sel) begin
+        if (sel)
+            y = i1;
+        else
+            y = i0;
+    end
+endmodule
+
 
