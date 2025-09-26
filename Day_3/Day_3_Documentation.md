@@ -120,6 +120,8 @@ This technique is used to eliminate or repurpose **unused states** in finite sta
 
 #### 🔸 Logic Cloning (Physical-Aware Synthesis)
 
+ ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/cloning.png?raw=true)
+ 
 Suppose logic drives multiple flip-flops: `FF_A`, `FF_B`, and `FF_C`. If `A` is placed **far from both B and C**, delay increases. To fix this:
 
 * Instead of routing the same logic all the way, we **clone the flip-flop**.
