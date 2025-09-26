@@ -289,8 +289,14 @@ Like the same do synthesis for opt_check2.v
 
 Do the same step for opt_check3.v ,opt_check4.v and multiple_modules.v files
 
-opt_chec3.v
+opt_check3.v
 
  ``` bash
     gvim opt_check3.v
  ```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check3.png?raw=true)
+
+synthesis opt_check3.v file
+
+
