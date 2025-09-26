@@ -105,3 +105,106 @@ Sometimes, **RTL simulation output** does not match **synthesized netlist output
 **Solution:** Use `always @(*)` so that the block is evaluated whenever **any input changes**, ensuring correct combinational behavior in both RTL and synthesized netlist.
 
 ---
+
+# 🚀 Blocking vs Non-Blocking Statements in Verilog
+
+In Verilog, **blocking (`=`)** and **non-blocking (`<=`)** statements are used **only inside `always` blocks**. Understanding their differences is critical for writing **correct sequential and combinational logic**.
+
+---
+
+## 🔹 Blocking Statements (`=`)
+
+- Executes statements **in the order they are written**.  
+- Each statement **must complete** before the next one starts.  
+- Typically used in **combinational logic**.
+
+**Example:**
+
+```verilog
+always @(*) begin
+    a = b & c;
+    e = a & f;
+end
+```
+
+**Explanation:**
+
+1. `a = b & c` is evaluated first.  
+2. Then `e = a & f` is evaluated using the updated value of `a`.  
+3. **Order matters** with blocking statements.
+
+---
+
+## 🔹 Non-Blocking Statements (`<=`)
+
+- Executes **all RHS expressions in parallel** when the `always` block is entered.  
+- Assigns values to LHS **after all RHS expressions are evaluated**.  
+- Typically used in **sequential logic** (flip-flops, registers).  
+- Execution **order does not matter**.
+
+**Example:**
+
+```verilog
+always @(posedge clk) begin
+    a <= b & c;
+    e <= a & f;
+end
+```
+
+**Explanation:**
+
+1. `b`, `c`, `a`, and `f` are **evaluated first**.  
+2. Then `a <= b & c` and `e <= a & f` are **assigned in parallel**.  
+3. Ensures **correct sequential behavior** in registers.
+
+---
+
+## 🔹 Caveats with Blocking Statements in Sequential Logic
+
+Consider this example:
+
+```verilog
+module example();
+    reg q, q0, d;
+    reg rst;
+    always @(posedge clk) begin
+        if (rst) begin
+            q0 = 1'b0;
+            q  = 1'b0;
+        end
+        else begin
+            q  = q0;
+            q0 = d;
+        end
+    end
+endmodule
+```
+
+**Problem:**
+
+- In the `else` block:
+  - `q = q0;` uses **old value** of `q0`.  
+  - `q0 = d;` updates `q0` **after** `q` is assigned.  
+- This produces **incorrect sequential behavior**.
+
+---
+
+### ✅ Solution: Use Non-Blocking Statements
+
+```verilog
+always @(posedge clk) begin
+    if (rst) begin
+        q0 <= 1'b0;
+        q  <= 1'b0;
+    end
+    else begin
+        q0 <= d;
+        q  <= q0;
+    end
+end
+```
+
+- Ensures that all RHS values are **evaluated first**, then assigned to LHS in **parallel**.  
+- Correct behavior for sequential logic like flip-flops.
+
+---
