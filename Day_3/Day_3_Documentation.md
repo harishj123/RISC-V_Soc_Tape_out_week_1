@@ -198,13 +198,19 @@ assign y = a ? b : 0;
 ### **Boolean Expansion**
 
 ```
-y=
-a
-⋅0+a⋅b
-y=0+a⋅b
-y=0+a⋅b
-y=a⋅b
-y=a⋅b
+$$
+y = \overline{a} \cdot 0 + a \cdot b
+$$
+
+$$
+y = 0 + a \cdot b
+$$
+
+$$
+y = a \cdot b
+$$
+✅ Optimized to a **single AND gate**
+
 ```
 
 ✅ The **multiplexer logic** is optimized to a single **AND gate**.
