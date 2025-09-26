@@ -355,6 +355,12 @@ gvim dff_const1.v -o dff_const2.v
 
 ---
 
+## dff_const1.v
+
+## GTKwave
+
+
+
 ## 3️⃣ Yosys Synthesis Workflow
 
 **Step 1 – Start Yosys**
@@ -373,13 +379,12 @@ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```tcl
 read_verilog dff_const1.v
-read_verilog dff_const2.v
 ```
 
 **Step 4 – Synthesize Top Module**
 
 ```tcl
-synth -top dff_const1   # or dff_const2
+synth -top dff_const1 
 ```
 
 **Step 5 – Clean Unused Logic**
