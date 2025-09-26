@@ -337,7 +337,7 @@ show
 Run GLS to validate **netlist functionality and timing**:
 
 ```bash
-iverilog ../lib/verilog_model/primitives.v ../lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 ./a.out
 gtkwave tb_ternary_operator_mux.vcd
 ```
@@ -351,5 +351,87 @@ gtkwave tb_ternary_operator_mux.vcd
 
 ---
 
+# 🧪 Day 4 Lab: Bad MUX (`bad_mux.v`)
 
+In this lab, we work with **bad_mux.v** to simulate, synthesize, and perform **Gate Level Simulation (GLS)**.
+
+---
+
+## 🔹 Step 1: Open the Design File
+
+Open the design file using GVim:
+
+```bash
+gvim bad_mux.v
+```
+
+- Inspect the **MUX implementation** in the file.
+
+---
+
+## 🔹 Step 2: Generate Simulation Waveform
+
+Simulate the design with its testbench:
+
+```bash
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+- `iverilog` → Compiles the design and testbench.  
+- `./a.out` → Runs the simulation.  
+- `gtkwave` → Opens waveform viewer to analyze signals.
+
+---
+
+## 🔹 Step 3: Synthesis
+
+Synthesize the design using **Yosys**:
+
+```bash
+yosys
+```
+
+Inside Yosys:
+
+```tcl
+# Load timing library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog design
+read_verilog bad_mux.v
+
+# Synthesize top module
+synth -top bad_mux
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write synthesized netlist
+write_verilog -noattr bad_mux_net.v
+
+# Visualize schematic
+show
+```
+
+- `bad_mux_net.v` → Synthesized **gate-level netlist** mapped to standard cells.
+
+---
+
+## 🔹 Step 4: Gate Level Simulation (GLS)
+
+Run GLS to validate **netlist behavior and timing**:
+
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v bad_mux_net.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+- Include **primitive and standard cell models** for accurate GLS.  
+- `bad_mux_net.v` → Synthesized netlist as the **DUT**.  
+- `gtkwave` → Visualizes waveform to ensure **behavior matches RTL simulation**.
+
+---
 
