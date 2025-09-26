@@ -417,6 +417,7 @@ write_verilog -noattr bad_mux_net.v
 # Visualize schematic
 show
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/bad_mux_synth.png?raw=true)
 
 - `bad_mux_net.v` → Synthesized **gate-level netlist** mapped to standard cells.
 
