@@ -159,3 +159,114 @@ Now, by **shifting 1 ns of logic** from block 1 to block 2:
 
 ---
 
+# **Digital Logic Optimization Experiment**
+
+This experiment demonstrates **logic optimization in Verilog** using multiplexers (`mux`) and synthesis in Yosys. We show how simple Boolean expressions are reduced to their optimal gate-level implementations.
+
+---
+
+## **1️⃣ List and Open Files**
+
+First, list all the files related to optimization:
+
+```bash
+ls *opt*
+```
+
+From these, we will focus on `opt_check` files:
+
+```bash
+ls *opt_check*
+```
+
+Open the first file for inspection:
+
+```bash
+gvim opt_check.v
+```
+
+---
+
+## **2️⃣ `opt_check.v` Example**
+
+### **Verilog Code**
+
+```verilog
+assign y = a ? b : 0;
+```
+
+### **Boolean Expansion**
+
+```
+y = a_bar × 0 + a × b
+y = 0 + a × b
+y = a × b
+```
+
+✅ The **multiplexer logic** is optimized to a single **AND gate**.
+
+---
+
+## **3️⃣ `opt_check2.v` Example**
+
+Open the second file:
+
+```bash
+gvim opt_check2.v
+```
+
+### **Verilog Code**
+
+```verilog
+assign y = a ? 1 : b;
+```
+
+### **Boolean Expansion**
+
+```
+y = a × 1 + a_bar × b
+y = a + a_bar × b
+y = a + b   (by Consensus Theorem)
+```
+
+✅ Here, the **logic is optimized to a single OR gate**.
+**Note:** The simplification uses the **Consensus Theorem**:
+
+$$
+A + \bar{A}B = A + B
+$$
+
+---
+
+## **4️⃣ Synthesis Using Yosys**
+
+We can now synthesize and visualize the optimized design.
+
+```bash
+yosys
+```
+
+### **Yosys Commands**
+
+```tcl
+# Load timing library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog file
+read_verilog opt_check.v
+
+# Synthesize top module
+synth -top opt_check
+
+# Clean unused logic and wires
+opt_clean -purge
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Show schematic
+show
+```
+
+---
+
