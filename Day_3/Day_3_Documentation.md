@@ -452,7 +452,11 @@ synthesis
 
 open gtkwave
 
-![image alt](
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const4.png?raw=true)
+
+synthesis
+
+
 
 
 
