@@ -267,6 +267,9 @@ Open the MUX design file using GVim:
 gvim ternary_operator_mux.v
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/ternary_operator_mux.png?raw=true)
+
+
 - This file implements a MUX using the **ternary operator (`? :`)**.
 
 ---
