@@ -198,9 +198,13 @@ assign y = a ? b : 0;
 ### **Boolean Expansion**
 
 ```
-y = a_bar × 0 + a × b
-y = 0 + a × b
-y = a × b
+y=
+a
+⋅0+a⋅b
+y=0+a⋅b
+y=0+a⋅b
+y=a⋅b
+y=a⋅b
 ```
 
 ✅ The **multiplexer logic** is optimized to a single **AND gate**.
