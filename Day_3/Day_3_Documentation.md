@@ -49,6 +49,10 @@ Boolean optimisation uses methods like **K-map** or **Quine–McCluskey** to sim
 assign y = a ? (b ? c : (c ? a : 0)) : (!c);
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/Boolean_optimisation_example.png?raw=true)
+
+It is not a optimised one.To optimise it we need to do boolean expression reduction technique.
+
 Naively, this requires **three multiplexers**. Let’s optimise step by step:
 
 1. First MUX simplifies:
