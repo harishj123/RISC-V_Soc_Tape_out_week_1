@@ -299,4 +299,13 @@ opt_check3.v
 
 synthesis opt_check3.v file
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check3_synth.png?raw=true)
+
+opt_check4.v
+
+``` bash
+    gvim opt_check4.v
+ ```
+
+
 
