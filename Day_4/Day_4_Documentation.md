@@ -386,6 +386,8 @@ gtkwave tb_bad_mux.vcd
 - `./a.out` → Runs the simulation.  
 - `gtkwave` → Opens waveform viewer to analyze signals.
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/bad_mux_gtkwave.png?raw=true)
+
 ---
 
 ## 🔹 Step 3: Synthesis
