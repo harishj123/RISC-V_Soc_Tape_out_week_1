@@ -53,16 +53,16 @@ Naively, this requires **three multiplexers**. Let’s optimise step by step:
    $bc + a\bar{b}c$
 
 3. Third MUX output:
-   $a(bc + a\bar{b}c) + a\bar{c}$
-   $= abc + a\bar{b}c + a\bar{c}$
-   $= ac[b + \bar{b}] + a\bar{c}$
-   $= ac + a\bar{c}$
-   $= a \oplus c$
+   $a(bc + a\bar{b}c) + \bar{a}\bar{c}$
+   $= abc + a\bar{b}c + \bar{a}\bar{c}$
+   $= ac[b + \bar{b}] + \bar{a}\bar{c}$
+   $= ac + \bar{a}\bar{c}$
+   $= a \odot c$
 
 ✅ Final Optimised Expression:
-$y = a \oplus c$
+$y = a \odot c$  (XNOR)
 
-So, instead of **3 multiplexers**, only an **XOR gate** is required. 🎉
+So, instead of **3 multiplexers**, only an **XNOR gate** is required. 🎉
 
 ---
 
@@ -78,11 +78,3 @@ Sequential logic optimisation focuses on improving circuits with storage element
 * **Sequential Logic Cloning (Floorplan-Aware Synthesis)**
 
 ---
-
-## 🎯 Key Takeaway
-
-Logic optimisation (both combinational and sequential) is **crucial for VLSI design**, reducing **area, power, and delay** while maintaining correct functionality.
-
----
-
-✨ This is Day 3 of my Digital VLSI Learning Journey 🚀
