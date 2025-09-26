@@ -426,6 +426,12 @@ show
 
 ---
 
+Perform same for remaining dff files.
+
+dff_const2.v
+
+open gtkwave
+
 
 
 
