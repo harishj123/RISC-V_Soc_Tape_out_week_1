@@ -21,6 +21,8 @@ We have an **AND gate** and a **NOR gate**. Inputs `A` and `B` go to the AND gat
 
 $Y = \overline{(AB + C)}$
 
+ ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/const_logic_example.png?raw=true)
+
 * If **A = 0** (grounded), then:
   $Y = \overline{C}$
   → Only one **inverter** is needed for the output.
