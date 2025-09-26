@@ -445,5 +445,8 @@ gtkwave tb_bad_mux.vcd
 - `bad_mux_net.v` → Synthesized netlist as the **DUT**.  
 - `gtkwave` → Visualizes waveform to ensure **behavior matches RTL simulation**.
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/bad_mux_GLS.png?raw=true)
+  
+
 ---
 
