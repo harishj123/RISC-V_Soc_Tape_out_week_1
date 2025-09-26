@@ -324,6 +324,84 @@ Synthesis multiple_modules.v
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/multiple_module_synth.png?raw=true)
 
+---
+
+# Sequential Logic Optimization – DFF Constant Files
+
+This section demonstrates **sequential logic optimization** by synthesizing **D flip-flops with constant inputs**.
+
+---
+
+## 1️⃣ List DFF Constant Files
+
+Use the following command to list all relevant files:
+
+```bash
+ls *dff*const*
+```
+
+---
+
+## 2️⃣ Open Multiple Files in `gvim`
+
+To edit and view multiple files at once:
+
+```bash
+gvim dff_const1.v -o dff_const2.v
+```
+
+* The `-o` option opens **both files in split windows**.
+* You can now compare and edit the **DFF constant implementations** side by side.
+
+---
+
+## 3️⃣ Yosys Synthesis Workflow
+
+**Step 1 – Start Yosys**
+
+```bash
+yosys
+```
+
+**Step 2 – Load Standard Cell Library**
+
+```tcl
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+**Step 3 – Read Verilog Files**
+
+```tcl
+read_verilog dff_const1.v
+read_verilog dff_const2.v
+```
+
+**Step 4 – Synthesize Top Module**
+
+```tcl
+synth -top dff_const1   # or dff_const2
+```
+
+**Step 5 – Clean Unused Logic**
+
+```tcl
+opt_clean -purge
+```
+
+**Step 6 – Map to Standard Cells**
+
+```tcl
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+**Step 7 – Visualize the Design**
+
+```tcl
+show
+```
+
+---
+
 
 
 
