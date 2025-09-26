@@ -103,6 +103,9 @@ Similarly for a **set-enabled Flip-Flop**:
 * If **set = 1**, output $Q = 1$.
 * If **set = 0**, and $D = 0$, then $Q = 0$.
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/seq_const_set.png?raw=true)
+  
+
 ⚠️ Problem: The circuit cannot determine a **constant sequential value**, since at times $Q = set$ and $Q = \bar{set}$, which introduces delay. For sequential constant propagation, the output should remain constant — but in this case, it does not. Hence, it **cannot be optimised** this way.
 
 ---
