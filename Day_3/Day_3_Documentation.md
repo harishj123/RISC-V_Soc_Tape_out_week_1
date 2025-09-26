@@ -1,6 +1,6 @@
 # Day 3: Introduction to Logic Optimisation
 
-## 🔹 Combinational Logic Optimisation
+## 🔹 Combinational Logic Optimisation 
 
 Combinational logic optimisation is the process of **squeezing the logic** to get the most optimised design, which saves **area and power**.
 
