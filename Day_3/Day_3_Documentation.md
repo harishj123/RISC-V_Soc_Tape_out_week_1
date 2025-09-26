@@ -95,6 +95,9 @@ Consider a **D Flip-Flop with reset** connected to a NAND gate:
 * If **reset = 1**, output $Q = 0$.
 * If **reset = 0**, but $D = 0$, then again $Q = 0$.
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/seq_const_reset.png?raw=true)
+  
+
 Similarly for a **set-enabled Flip-Flop**:
 
 * If **set = 1**, output $Q = 1$.
