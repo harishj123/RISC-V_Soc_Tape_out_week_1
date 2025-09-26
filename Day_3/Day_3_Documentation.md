@@ -87,3 +87,62 @@ Sequential logic optimisation focuses on improving circuits with storage element
 * **Sequential Logic Cloning (Floorplan-Aware Synthesis)**
 
 ---
+
+#### 🔸 Sequential Constant Propagation
+
+Consider a **D Flip-Flop with reset** connected to a NAND gate:
+
+* If **reset = 1**, output $Q = 0$.
+* If **reset = 0**, but $D = 0$, then again $Q = 0$.
+
+Similarly for a **set-enabled Flip-Flop**:
+
+* If **set = 1**, output $Q = 1$.
+* If **set = 0**, and $D = 0$, then $Q = 0$.
+
+⚠️ Problem: The circuit cannot determine a **constant sequential value**, since at times $Q = set$ and $Q = \bar{set}$, which introduces delay. For sequential constant propagation, the output should remain constant — but in this case, it does not. Hence, it **cannot be optimised** this way.
+
+---
+
+Some Advanced Techniques as follows:
+
+#### 🔸 State Optimisation
+
+This technique is used to eliminate or repurpose **unused states** in finite state machines (FSMs), leading to simpler and faster circuits.
+
+---
+
+#### 🔸 Logic Cloning (Physical-Aware Synthesis)
+
+Suppose logic drives multiple flip-flops: `FF_A`, `FF_B`, and `FF_C`. If `A` is placed **far from both B and C**, delay increases. To fix this:
+
+* Instead of routing the same logic all the way, we **clone the flip-flop**.
+* Logic is given to one flip-flop and its duplicate distributes signals closer to `B` and `C`.
+
+✅ This reduces long interconnect delays and improves performance.
+
+---
+
+#### 🔸 Retiming
+
+Retiming is shifting logic across flip-flops to balance delays:
+
+* Two D flip-flops are connected sequentially with two logic blocks.
+* Logic 1 has **5 ns delay**, Logic 2 has **2 ns delay**.
+
+📊 Performance:
+
+* Max frequency is set by the slowest path.
+* Logic 1 → $f = 1/5ns = 200 MHz$.
+* Logic 2 → $f = 1/2ns = 500 MHz$.
+* Minimum operating frequency = **200 MHz**.
+
+Now, by **shifting 1 ns of logic** from block 1 to block 2:
+
+* Logic 1 delay = 4 ns → $f = 250 MHz$
+* Logic 2 delay = 3 ns → $f = 333 MHz$
+
+✅ Effective system frequency increases beyond 200 MHz. Retiming improves **overall throughput and performance**.
+
+---
+
