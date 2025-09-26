@@ -365,6 +365,9 @@ Open the design file using GVim:
 gvim bad_mux.v
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/bad_mux.png?raw=true)
+
+
 - Inspect the **MUX implementation** in the file.
 
 ---
