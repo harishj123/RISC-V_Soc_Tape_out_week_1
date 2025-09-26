@@ -197,18 +197,13 @@ assign y = a ? b : 0;
 
 ### **Boolean Expansion**
 
+Digital Logic Expansion:
+
 ```
-$$
-y = \overline{a} \cdot 0 + a \cdot b
-$$
+y = a̅ ⋅ 0 + a ⋅ b
+y = 0 + a ⋅ b
+y = a ⋅ b
 
-$$
-y = 0 + a \cdot b
-$$
-
-$$
-y = a \cdot b
-$$
 ✅ Optimized to a **single AND gate**
 
 ```
@@ -233,10 +228,13 @@ assign y = a ? 1 : b;
 
 ### **Boolean Expansion**
 
+Digital Logic Expansion:
+
 ```
-y = a × 1 + a_bar × b
-y = a + a_bar × b
+y = a ⋅ 1 + a̅ ⋅ b
+y = a + a̅ ⋅ b
 y = a + b   (by Consensus Theorem)
+
 ```
 
 ✅ Here, the **logic is optimized to a single OR gate**.
