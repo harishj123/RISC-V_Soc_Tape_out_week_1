@@ -611,6 +611,14 @@ show
 
 ---
 
+# 📌 Day 3 Summary – Logic Optimisation
+
+1. **Combinational Optimisation** → Constant propagation & Boolean reduction minimise gates, saving **area + power**.  
+2. **Constant Propagation** → Fixed input values simplify circuits (e.g., complex gate → **inverter**).  
+3. **Boolean Optimisation** → K-map / Boolean algebra reduces complex mux logic to **simple gates** (e.g., XNOR).  
+4. **Sequential Optimisation** → Includes constant propagation, state optimisation, logic cloning, and retiming for **better performance**.  
+5. **Unused Output Optimisation** → Synthesis removes flip-flops/logic not affecting outputs (e.g., 3-bit counter → **1 flip-flop** if only LSB is used).  
+
 
 
 
