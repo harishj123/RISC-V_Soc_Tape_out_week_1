@@ -523,7 +523,86 @@ It removes registers/gates that **do not contribute to primary outputs**.
 
 ---
 
+Perfect 🚀 let’s write this step by step for your **GitHub notes** in a simple way.
 
+---
+
+## 🟢 Unused Output Optimization – Example 2
+
+### Step 1: Copy the Original File
+
+```sh
+cp counter_opt.v counter_opt2.v
+```
+
+* Makes a copy of the original counter file.
+* Now you can edit safely without touching the original.
+
+---
+
+### Step 2: Edit the File
+
+```sh
+gvim counter_opt2.v
+```
+
+Inside the file, change the output assignment to:
+
+```verilog
+assign q = (count[2:0] == 3'b100);
+```
+
+* Here `q` will be `1` **only when counter value = `100` (decimal 4)**.
+* Otherwise `q = 0`.
+
+So output sequence will look like:
+
+```
+000 → q=0
+001 → q=0
+010 → q=0
+011 → q=0
+100 → q=1
+101 → q=0
+110 → q=0
+111 → q=0
+000 → q=0
+...
+```
+
+Save and quit in GVim:
+
+* Press `Shift + :` → type `wa!` → Enter
+
+---
+
+### Step 3: Run Synthesis
+
+```sh
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt2.v
+synth -top counter_opt2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+---
+
+### 🔎 What Happens After Optimization?
+
+* Now all **3 bits of counter** (`count[2:0]`) are **needed** to check if the value = `100`.
+* So **no optimization of unused states is possible**.
+* Final circuit will keep **all 3 flip-flops** + comparator logic.
+
+👉 Compare this with `counter_opt.v` (only 1 flip-flop left after optimization).
+
+---
+
+✅ This shows how **output logic determines whether extra flip-flops are removed or kept** in synthesis.
+
+---
 
 
 
