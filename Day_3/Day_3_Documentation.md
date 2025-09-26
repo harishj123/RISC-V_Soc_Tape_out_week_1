@@ -481,6 +481,8 @@ open counter_opt.v file by
 ``` bash
    gvim counter_opt.v
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/counter_opt_code.png?raw=true)
+
 
 This file looks like a 3 bit up counter.
 
