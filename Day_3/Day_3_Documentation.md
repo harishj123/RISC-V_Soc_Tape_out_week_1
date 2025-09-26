@@ -287,3 +287,10 @@ Like the same do synthesis for opt_check2.v
 
 ---
 
+Do the same step for opt_check3.v ,opt_check4.v and multiple_modules.v files
+
+opt_chec3.v
+
+ ``` bash
+    gvim opt_check3.v
+ ```
