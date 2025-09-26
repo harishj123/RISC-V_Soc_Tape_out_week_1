@@ -411,6 +411,12 @@ synth -top bad_mux
 # Map to standard cells
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
+show
+```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/bad_mux_gtkwave.png?raw=true)
+
+``` bash
 # Write synthesized netlist
 write_verilog -noattr bad_mux_net.v
 
