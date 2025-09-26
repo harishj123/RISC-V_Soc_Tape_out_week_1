@@ -351,8 +351,6 @@ gtkwave tb_ternary_operator_mux.vcd
 
 ---
 
-# 🧪 Day 4 Lab: Bad MUX (`bad_mux.v`)
-
 In this lab, we work with **bad_mux.v** to simulate, synthesize, and perform **Gate Level Simulation (GLS)**.
 
 ---
@@ -450,3 +448,85 @@ gtkwave tb_bad_mux.vcd
 
 ---
 
+This lab demonstrates the **caveats of using blocking statements** in combinational and sequential logic, and how synthesis and simulation behave.
+
+---
+
+## 🔹 Step 1: Open the Design File
+
+Open the file using GVim:
+
+```bash
+gvim blocking_caveat.v
+```
+
+- Inspect the **always block** and see how **blocking assignments (`=`)** can produce unexpected behavior due to evaluation order.
+
+---
+
+## 🔹 Step 2: Generate Simulation Waveform
+
+Simulate the design with its testbench:
+
+```bash
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+- `iverilog` → Compiles the design and testbench.  
+- `./a.out` → Runs the simulation.  
+- `gtkwave` → Opens waveform viewer to analyze **signal propagation and output timing**.
+
+---
+
+## 🔹 Step 3: Synthesis
+
+Synthesize the design using **Yosys**:
+
+```bash
+yosys
+```
+
+Inside Yosys:
+
+```tcl
+# Load timing library
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Verilog design
+read_verilog blocking_caveat.v
+
+# Synthesize top module
+synth -top blocking_caveat
+
+# Map to standard cells
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write synthesized netlist
+write_verilog -noattr blocking_caveat_net.v
+
+# Visualize schematic
+show
+```
+
+- `blocking_caveat_net.v` → Synthesized **gate-level netlist** mapped to standard cells.  
+- Use this netlist to check how **blocking assignments affect synthesis outputs**.
+
+---
+
+## 🔹 Step 4: Gate Level Simulation (GLS)
+
+Run GLS to validate **netlist behavior**:
+
+```bash
+iverilog ../lib/verilog_model/primitives.v ../lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+- Include **primitive and standard cell models** for accurate GLS.  
+- `blocking_caveat_net.v` → Synthesized netlist as the **DUT**.  
+- `gtkwave` → Visualizes waveform to verify **behavior matches RTL simulation**.
+
+---
