@@ -359,6 +359,13 @@ gvim dff_const1.v -o dff_const2.v
 
 ## GTKwave
 
+use command,
+
+``` bash
+ iverilog dff_const1.v tb_dff_const1.v
+```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/DFF_const1.png?raw=true)
 
 
 ## 3️⃣ Yosys Synthesis Workflow
