@@ -428,9 +428,15 @@ show
 
 Perform same for remaining dff files.
 
-dff_const2.v
+**dff_const2.v**
 
 open gtkwave
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/Dff_const2.png?raw=true)
+
+synthesis
+
+
 
 
 
