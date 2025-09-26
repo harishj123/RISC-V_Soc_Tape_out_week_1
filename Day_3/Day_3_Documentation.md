@@ -279,5 +279,9 @@ show
 ```
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check_synth.png?raw=true)
 
+Like the same do synthesis for opt_check2.v
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/opt_check_synth.png?raw=true)
+
 ---
 
