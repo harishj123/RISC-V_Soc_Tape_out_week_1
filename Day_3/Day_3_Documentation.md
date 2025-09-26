@@ -19,7 +19,7 @@ Constant propagation is a direct optimisation technique used to simplify logical
 
 We have an **AND gate** and a **NOR gate**. Inputs `A` and `B` go to the AND gate, whose output and another input `C` go to the NOR gate.
 
-$Y = \overline{(AB + C)}$
+$Y = !{(AB + C)}$
 
  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/const_logic_example.png?raw=true)
 
@@ -29,7 +29,7 @@ $Y = \overline{(AB + C)}$
 
 📉 **Transistor Count in CMOS:**
 
-* For $Y = \overline{(AB + C)}$: needs **6 transistors**
+* For $Y = !{(AB + C)}$: needs **6 transistors**
      ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/constant_propagation.png?raw=true)
   
 * For $Y = \overline{C}$: needs **2 transistors**
