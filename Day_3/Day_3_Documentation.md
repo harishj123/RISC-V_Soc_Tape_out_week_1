@@ -124,6 +124,8 @@ This technique is used to eliminate or repurpose **unused states** in finite sta
  
 Suppose logic drives multiple flip-flops: `FF_A`, `FF_B`, and `FF_C`. If `A` is placed **far from both B and C**, delay increases. To fix this:
 
+ ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/cloning_second_way.png?raw=true)
+
 * Instead of routing the same logic all the way, we **clone the flip-flop**.
 * Logic is given to one flip-flop and its duplicate distributes signals closer to `B` and `C`.
 
