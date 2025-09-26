@@ -320,6 +320,8 @@ write_verilog -noattr ternary_operator_mux_net.v
 show
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_4/ternary_op_synthesis.png?raw=true)
+
 - The synthesized netlist (`ternary_operator_mux_net.v`) is now **mapped to actual standard cells**.
 
 ---
