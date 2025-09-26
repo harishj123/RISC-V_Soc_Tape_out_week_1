@@ -400,10 +400,20 @@ synth -top dff_const1
 opt_clean -purge
 ```
 
-**Step 6 – Map to Standard Cells**
+**Step 5 – dff map library**
 
 ```tcl
-abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+**Step 6- map to standard cells**
+
+``` bash
+ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+```tcl
+opt_clean -purge
 ```
 
 **Step 7 – Visualize the Design**
@@ -411,6 +421,8 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```tcl
 show
 ```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_3/dff_const1_synthesis.png?raw=true)
 
 ---
 
