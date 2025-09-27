@@ -38,7 +38,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 3: Sequential Logic & Unused Output Optimization**
 
-* [✔️ Day 3 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_1)
+* [✔️ Day 3 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_3)
 * **Topics Covered:**
 
   * Sequential constant propagation
@@ -50,7 +50,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 4: GLS, Blocking vs Non-Blocking, and Synthesis-Simulation Mismatch**
 
-* [✔️ Day 4 Report](#)
+* [✔️ Day 4 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_4)
 * **Topics Covered:**
 
   * Gate Level Simulation (GLS)
@@ -61,7 +61,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 5: Optimization in Synthesis – if vs case Statements**
 
-* [✔️ Day 5 Report](#)
+* [✔️ Day 5 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_5)
 * **Topics Covered:**
 
   * if / else vs case statements
