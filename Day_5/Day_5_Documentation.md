@@ -2,7 +2,15 @@
 
 # 🚀 Day 5: Optimization in Synthesis – `if` vs `case` Statements
 
-When writing RTL, the way you describe logic directly impacts **synthesis results**. Two common conditional constructs are **`if`** and **`case`**. Let’s explore their usage, pitfalls, and best practices.
+👋 **Welcome back!**
+In RTL design, how you describe logic (`if` or `case`) has a **direct impact on synthesis results, hardware structure, and performance**. A small mistake—like missing an `else` or `default`—can introduce **unwanted latches** and hurt optimization.
+
+Today, we’ll explore:
+
+* ✅ How `if` creates **priority logic**
+* ✅ How `case` creates **parallel logic**
+* ⚠️ Common pitfalls that cause **latch inference**
+* 🔑 The key differences and best practices
 
 ---
 
@@ -29,7 +37,6 @@ end
 ### ⚠️ Danger – Inferred Latches
 
 If no `else` is given, synthesis **remembers the previous value** → infers a **latch**.
-This is usually **bad coding style** unless latch is intentionally required.
 
 #### Example – Incomplete `if`
 
