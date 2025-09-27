@@ -83,9 +83,3 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 | Sky130 Library | Standard cell technology library |
 
 ---
-
-You can now **replace each `#` with the actual link** for Day 1–5 reports.
-
-If you want, I can also make it **more visually appealing with emojis, collapsible sections, and badges for each day** to really pop on GitHub.
-
-Do you want me to do that?
