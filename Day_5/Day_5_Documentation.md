@@ -373,6 +373,7 @@ Open the waveform:
 ```bash
 gtkwave tb_comp_case.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/comp_case_gtkwave.png?raw=true)
 
 👉 In GTKWave, you will observe **`sel` selecting one of the inputs (i0, i1, i2, or default value)**. This confirms the **MUX behavior**.
 
