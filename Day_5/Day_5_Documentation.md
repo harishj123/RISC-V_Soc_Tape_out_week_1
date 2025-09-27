@@ -231,9 +231,10 @@ In this lab, we test another example of an **incomplete `if` statement** using `
 ## 🔹 Step 1: Open Incomplete Files
 
 ```bash
-ls *incomp*
-gvim incomp_if2.v tb_incomp_if2.v -o
+gvim incomp_if2.v
 ```
+![iamge alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_if2_code.png?raw=true)
+
 
 * Opens `incomp_if2.v` and its testbench in split view.
 
