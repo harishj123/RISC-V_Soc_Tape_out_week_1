@@ -222,8 +222,6 @@ show
 
 ---
 
-# 🧪 Day 5 Lab – Incomplete `if` (Version 2) and Latch Inference
-
 In this lab, we test another example of an **incomplete `if` statement** using `incomp_if2.v`. The goal is to observe how synthesis infers **latches** when not all conditions are covered.
 
 ---
@@ -280,5 +278,60 @@ show
 ```
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_if2_synth.png?raw=true)
+
+---
+
+
+In this lab, we test an **incomplete `case` statement** using `incomp_case.v`. Just like with `if`, missing branches in a `case` statement can lead to **inferred latches**.
+
+---
+
+## 🔹 Step 1: Open Incomplete Files
+
+```bash
+ls *incomp*
+gvim incomp_case.v tb_incomp_case.v -o
+```
+
+* Opens `incomp_case.v` and its testbench in split view.
+
+---
+
+## 🔹 Step 2: Simulate with Icarus Verilog + GTKWave
+
+Compile and run the simulation:
+
+```bash
+iverilog incomp_case.v tb_incomp_case.v
+./a.out
+```
+
+View waveforms:
+
+```bash
+gtkwave tb_incomp_case.vcd
+```
+
+👉 In GTKWave, you’ll notice that **when `sel` is not covered by the case items, the output holds its old value** → latch inference.
+
+---
+
+## 🔹 Step 3: Synthesis with Yosys
+
+Run Yosys:
+
+```bash
+yosys
+```
+
+Inside Yosys shell, execute:
+
+```tcl
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog incomp_case.v
+synth -top incomp_case
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
 
 ---
