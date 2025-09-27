@@ -234,7 +234,7 @@ gvim incomp_if2.v
 ![iamge alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_if2_code.png?raw=true)
 
 
-* Opens `incomp_if2.v` and its testbench in split view.
+* Opens `incomp_if2.v` 
 
 ---
 
@@ -289,11 +289,11 @@ In this lab, we test an **incomplete `case` statement** using `incomp_case.v`. J
 ## 🔹 Step 1: Open Incomplete Files
 
 ```bash
-ls *incomp*
-gvim incomp_case.v tb_incomp_case.v -o
+gvim incomp_case.v 
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_case_code.png?raw=true)
 
-* Opens `incomp_case.v` and its testbench in split view.
+* Opens `incomp_case.v`
 
 ---
 
