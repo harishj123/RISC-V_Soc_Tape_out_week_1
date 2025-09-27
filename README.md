@@ -1,4 +1,3 @@
-Here’s a **cleaned-up and attractive version** of your README, ready for you to add links for Day 1–5 reports:
 
 ---
 
@@ -6,7 +5,7 @@ Here’s a **cleaned-up and attractive version** of your README, ready for you t
 
 # Verilog RTL Design and Synthesis – Sky130 Workshop
 
-Welcome, Evaluator!
+Welcome,
 
 This repository documents my progress through a **5-day workshop on RTL Design and Synthesis** using open-source tools like **Icarus Verilog**, **GTKWave**, and **Yosys**. Each day focuses on specific concepts and practical labs related to digital design and synthesis using the **Sky130 process**.
 
@@ -16,7 +15,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 1: Verilog RTL Design, Simulation & Introduction to Synthesis**
 
-* [✔️ Day 1 Report](#)
+* [✔️ Day 1 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_1)
 * **Topics Covered:**
 
   * Verilog RTL design
@@ -39,7 +38,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 3: Sequential Logic & Unused Output Optimization**
 
-* [✔️ Day 3 Report](#)
+* [✔️ Day 3 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_1)
 * **Topics Covered:**
 
   * Sequential constant propagation
