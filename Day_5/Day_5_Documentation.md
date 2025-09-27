@@ -591,3 +591,17 @@ GTKWave
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/mux_generator_code.png?raw=true
 )
 
+open ***demux_generate.v file**
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/demux_generate_code.png?raw=true)
+
+GTKWave
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/demux_generate_gtk.png?raw=true)
+
+open ***open rca.v file***
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/rca.png?raw=true)
+
+
+
