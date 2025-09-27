@@ -171,6 +171,7 @@ In this lab, we test **incomplete `if` statements** and observe how they infer *
 ls *incomp*
 gvim *incomp* -o
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/opening%20all%20incomp%20files.png?raw=true)
 
 * This opens all files containing `incomp` (incomplete logic examples).
 * `-o` option in `gvim` opens multiple files side by side.
