@@ -485,3 +485,98 @@ show
 * `show` → opens schematic viewer.
 
 ---
+
+## **1️⃣ 32:1 MUX using `for` loop inside always**
+
+Here, we select 1 out of 32 inputs. Writing 32 `if` or `case` statements is tedious. We use a `for` loop to evaluate which input to select.
+
+```verilog
+module mux32to1(
+    input  [31:0] i,  // 32 input bits
+    input  [4:0]  sel, // select line
+    output reg    y
+);
+    integer k;
+
+    always @(*) begin
+        y = 0;
+        for(k = 0; k < 32; k = k + 1) begin
+            if(sel == k)
+                y = i[k];
+        end
+    end
+endmodule
+```
+
+✅ **Notes:**
+
+* `for` loop evaluates logic but does **not instantiate hardware multiple times**.
+* `always @(*)` ensures combinational logic.
+
+---
+
+## **2️⃣ Replicating hardware with `generate`**
+
+Here, hardware is **instantiated multiple times**. Example: **AND gates replicated 4 times**.
+
+```verilog
+module and_array(
+    input  [3:0] a, b,
+    output [3:0] y
+);
+    genvar i;
+
+    generate
+        for(i = 0; i < 4; i = i + 1) begin : gen_and
+            and u_and(y[i], a[i], b[i]);
+        end
+    endgenerate
+endmodule
+```
+
+✅ **Notes:**
+
+* `generate` creates **multiple hardware blocks**, not just evaluating values.
+* `genvar` is **required** for generate loops.
+
+---
+
+## **3️⃣ Ripple Carry Adder using `generate`**
+
+We can build an N-bit ripple carry adder by replicating full adders.
+
+```verilog
+module full_adder(
+    input  a, b, cin,
+    output sum, cout
+);
+    assign sum  = a ^ b ^ cin;
+    assign cout = (a & b) | (b & cin) | (a & cin);
+endmodule
+
+module ripple_carry_adder #(parameter N = 8)(
+    input  [N-1:0] a, b,
+    input  cin,
+    output [N-1:0] sum,
+    output cout
+);
+    wire [N:0] c;
+    assign c[0] = cin;
+    assign cout = c[N];
+
+    genvar i;
+    generate
+        for(i = 0; i < N; i = i + 1) begin : adder_gen
+            full_adder u_fa(
+                .a(a[i]),
+                .b(b[i]),
+                .cin(c[i]),
+                .sum(sum[i]),
+                .cout(c[i+1])
+            );
+        end
+    endgenerate
+endmodule
+```
+
+---
