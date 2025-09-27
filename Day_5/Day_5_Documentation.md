@@ -451,6 +451,9 @@ show
 gvim bad_case.v
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/bad_code.png?raw=true)
+
+
 **Run simulation:**
 
 ```bash
@@ -458,6 +461,7 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 ./a.out
 gtkwave tb_bad_case.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/bad_gtk.png?raw=true)
 
 * Include any library files needed (`primitives.v`, cell library).
 * Compile with `iverilog`.
@@ -475,6 +479,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog -noattr tb_bad_case_net.v
 show
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/bad_synth.png?raw=true)
 
 * `write_verilog -noattr` → generates netlist without attributes.
 * `show` → opens schematic viewer.
