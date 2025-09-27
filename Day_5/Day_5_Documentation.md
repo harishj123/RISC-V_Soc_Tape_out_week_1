@@ -311,6 +311,7 @@ View waveforms:
 ```bash
 gtkwave tb_incomp_case.vcd
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_case_gtkwave.png?raw=true)
 
 👉 In GTKWave, you’ll notice that **when `sel` is not covered by the case items, the output holds its old value** → latch inference.
 
