@@ -193,6 +193,9 @@ View waveforms:
 gtkwave tb_incomp_if.vcd
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_if_gtkwave.png?raw=true)
+
+
 👉 In GTKWave, you’ll notice that **when no condition matches, the output holds its previous value** → this is exactly the **inferred latch behavior**.
 
 ---
