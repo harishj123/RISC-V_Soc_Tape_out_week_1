@@ -353,6 +353,7 @@ In this lab, we implement a **multiplexer** using a `case` statement. We’ll si
 ls *case*
 gvim comp_case.v tb_comp_case.v -o
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/comp_case_code.png?raw=true)
 
 * Opens both the design (`comp_case.v`) and the testbench (`tb_comp_case.v`) in split view.
 
