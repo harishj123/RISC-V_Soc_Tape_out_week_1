@@ -410,3 +410,69 @@ Practice output
 
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/practice_synth.png?raw=true)
 
+---
+
+### **1️⃣ partial_case_assign.v**
+
+**Open file:**
+
+```bash
+gvim partial_case_assign.v
+```
+
+**Synthesis using Yosys:**
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog partial_case_assign.v
+synth -top partial_case_assign
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+* `read_liberty` → loads the standard cell library.
+* `read_verilog` → reads your RTL file.
+* `synth -top` → synthesizes with the top module.
+* `abc` → technology mapping to the library.
+* `show` → opens schematic viewer for verification.
+
+---
+
+### **2️⃣ bad_case.v**
+
+**Open RTL file:**
+
+```bash
+gvim bad_case.v
+```
+
+**Run simulation:**
+
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd__tt_025C_1v80.lib bad_case.v tb_bad_case.v
+./a.out
+gtkwave tb_bad_case.vcd
+```
+
+* Include any library files needed (`primitives.v`, cell library).
+* Compile with `iverilog`.
+* Run simulation (`./a.out`) to generate VCD.
+* Open waveform in GTKWave.
+
+**Synthesis using Yosys:**
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog bad_case.v
+synth -top bad_case
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr tb_bad_case_net.v
+show
+```
+
+* `write_verilog -noattr` → generates netlist without attributes.
+* `show` → opens schematic viewer.
+
+---
