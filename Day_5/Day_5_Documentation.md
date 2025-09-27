@@ -338,3 +338,63 @@ show
 ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_case_synth.png?raw=true)
 
 ---
+
+Got it 👍 Let’s document the **complete flow for `comp_case.v`** (open, simulate with GTKWave, and synthesize with Yosys) in the same GitHub-friendly style you’ve been using.
+
+---
+
+In this lab, we implement a **multiplexer** using a `case` statement. We’ll simulate the design, observe waveforms in GTKWave, and then synthesize it using Yosys.
+
+---
+
+## 🔹 Step 1: Open Files
+
+```bash
+ls *case*
+gvim comp_case.v tb_comp_case.v -o
+```
+
+* Opens both the design (`comp_case.v`) and the testbench (`tb_comp_case.v`) in split view.
+
+---
+
+## 🔹 Step 2: Simulation with Icarus Verilog + GTKWave
+
+Compile and run the simulation:
+
+```bash
+iverilog comp_case.v tb_comp_case.v
+./a.out
+```
+
+Open the waveform:
+
+```bash
+gtkwave tb_comp_case.vcd
+```
+
+👉 In GTKWave, you will observe **`sel` selecting one of the inputs (i0, i1, i2, or default value)**. This confirms the **MUX behavior**.
+
+---
+
+## 🔹 Step 3: Synthesis with Yosys
+
+Start Yosys:
+
+```bash
+yosys
+```
+
+Inside Yosys shell, run:
+
+```tcl
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog comp_case.v
+synth -top comp_case
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+👉 The schematic displayed by `show` will now be a **multiplexer structure** (not a latch, since we added all cases/default).
+
+---
