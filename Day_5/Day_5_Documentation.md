@@ -255,6 +255,8 @@ View waveforms:
 gtkwave tb_incomp_if2.vcd
 ```
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/incomp_if2_gtkwave.png?raw=true)
+
 👉 In GTKWave, you’ll notice the output **retains old values when no branch is executed**, which is the **inferred latch**.
 
 ---
