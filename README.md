@@ -27,7 +27,7 @@ This repository documents my progress through a **5-day workshop on RTL Design a
 
 ### **Day 2: Logic Optimization & Combinational Circuits**
 
-* [✔️ Day 2 Report](#)
+* [✔️ Day 2 Report](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/tree/main/Day_2)
 * **Topics Covered:**
 
   * Constant propagation
