@@ -1,3 +1,4 @@
+
 ---
 
 # 🚀 Day 5: Optimization in Synthesis – `if` vs `case` Statements
