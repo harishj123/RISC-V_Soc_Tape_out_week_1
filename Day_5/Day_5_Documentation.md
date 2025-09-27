@@ -396,6 +396,7 @@ synth -top comp_case
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/comp_case_synth.png?raw=true)
 
 👉 The schematic displayed by `show` will now be a **multiplexer structure** (not a latch, since we added all cases/default).
 
