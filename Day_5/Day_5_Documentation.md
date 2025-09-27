@@ -609,5 +609,21 @@ open ***demux_case.v***
 
 GTKwave
 
-![image alt](
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/demux_case_gtk.png?raw=true)
+
+
+Here’s a **clear summary with 5 concise points** for Day 5:
+
+**Summary:**
+`if` statements create **priority logic**, `case` statements create **parallel logic**; missing branches can cause **inferred latches**. `for` loops inside `always` evaluate expressions (like large MUX), while `generate` loops replicate hardware (like ripple carry adder). Simulation (Icarus + GTKWave) and synthesis (Yosys + Sky130) verify functionality and hardware structure.
+
+**Summary**
+
+1. `if/else` → priority logic; `case` → parallel logic.
+2. Missing `else` or `default` causes **latch inference**.
+3. `for` loop inside `always` simplifies combinational logic coding.
+4. `generate` loop replicates hardware; requires `genvar` and cannot be inside `always`.
+5. Lab workflow: **gvim → Icarus + GTKWave → Yosys synthesis** to observe behavior and hardware.
+
+
 
