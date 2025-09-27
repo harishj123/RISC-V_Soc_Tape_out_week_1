@@ -4,7 +4,7 @@
 # 🚀 Day 5: Optimization in Synthesis – `if` vs `case` Statements
 
 👋 **Welcome back!**
-In RTL design, how you describe logic (`if` or `case`) has a **direct impact on synthesis results, hardware structure, and performance**. A small mistake—like missing an `else` or `default`—can introduce **unwanted latches** and hurt optimization.
+In RTL design, how you describe logic (`if` or `case`) has a **direct impact on synthesis results, hardware structure, and performance**. A small mistake—like missing an `else` or `default`—can introduce **unwanted latches** and hurt optimization. 
 
 Today, we’ll explore:
 
