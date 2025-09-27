@@ -401,3 +401,12 @@ show
 👉 The schematic displayed by `show` will now be a **multiplexer structure** (not a latch, since we added all cases/default).
 
 ---
+
+Practice output
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/practice_code.png?raw=true)
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/practice_gtkwave.png?raw=true)
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_1/blob/main/Day_5/practice_synth.png?raw=true)
+
